@@ -1,4 +1,4 @@
-﻿# TODO: Translation updated at 2026-04-10 12:53
+﻿
 
 # game/dialogue/script-ch30-intro.rpy:57
 translate ptbr eternity_intro_71a86863:

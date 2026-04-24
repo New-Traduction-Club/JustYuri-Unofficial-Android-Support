@@ -1,4 +1,4 @@
-﻿# TODO: Translation updated at 2026-04-10 12:53
+﻿
 
 # game/talk_menu.rpy:170
 translate ptbr games_menu_e561696a:

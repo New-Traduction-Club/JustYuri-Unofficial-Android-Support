@@ -1,4 +1,4 @@
-﻿# TODO: Translation updated at 2026-04-10 12:53
+﻿
 
 # game/dialogue/script-ch30-insults.rpy:30
 translate ptbr i1_22453d08:

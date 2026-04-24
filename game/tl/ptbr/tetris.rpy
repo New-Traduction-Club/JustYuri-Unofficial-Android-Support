@@ -1,4 +1,4 @@
-﻿# TODO: Translation updated at 2026-04-10 12:53
+﻿
 
 # game/tetris.rpy:16
 translate ptbr tetris_8a53d27f:

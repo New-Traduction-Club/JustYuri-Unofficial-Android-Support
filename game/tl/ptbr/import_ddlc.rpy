@@ -1,4 +1,4 @@
-﻿# TODO: Translation updated at 2026-04-10 12:53
+﻿
 
 # game/import_ddlc.rpy:55
 translate ptbr import_ddlc_persistent_6fbb781f:

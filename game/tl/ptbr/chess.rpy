@@ -1,4 +1,4 @@
-﻿# TODO: Translation updated at 2026-04-10 12:53
+﻿
 
 # game/chess.rpy:11
 translate ptbr chess_d4e85c6e:

@@ -1,4 +1,4 @@
-﻿# TODO: Translation updated at 2026-04-10 12:53
+﻿
 
 # game/dialogue/script-purple_room.rpy:8
 translate ptbr purpleroomintro_bcc76eff:

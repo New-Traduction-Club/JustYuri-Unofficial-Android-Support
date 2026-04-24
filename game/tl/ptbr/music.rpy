@@ -1,4 +1,4 @@
-﻿# TODO: Translation updated at 2026-04-10 12:53
+﻿
 
 # game/music.rpy:107
 translate ptbr change_music_6cdc873f:

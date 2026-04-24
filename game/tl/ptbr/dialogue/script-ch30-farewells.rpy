@@ -1,4 +1,4 @@
-﻿# TODO: Translation updated at 2026-04-10 12:53
+﻿
 
 # game/dialogue/script-ch30-farewells.rpy:81
 translate ptbr farewell_1_2caf4980:

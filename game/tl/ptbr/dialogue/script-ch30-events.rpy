@@ -1,4 +1,4 @@
-﻿# TODO: Translation updated at 2026-04-10 12:53
+﻿
 
 # game/dialogue/script-ch30-events.rpy:3
 translate ptbr ouija_9d9b0dd1:

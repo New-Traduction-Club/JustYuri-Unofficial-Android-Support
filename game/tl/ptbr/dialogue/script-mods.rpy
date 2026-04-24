@@ -1,4 +1,4 @@
-﻿# TODO: Translation updated at 2026-04-10 12:53
+﻿
 
 # game/dialogue/script-mods.rpy:13
 translate ptbr intro_mods_38447c9e:

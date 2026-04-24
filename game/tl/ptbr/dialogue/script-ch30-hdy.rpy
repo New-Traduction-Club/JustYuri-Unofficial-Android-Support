@@ -1,4 +1,4 @@
-﻿# TODO: Translation updated at 2026-04-10 12:53
+﻿
 
 # game/dialogue/script-ch30-hdy.rpy:180
 translate ptbr HDY_eggnomancer_b5b2e99a:

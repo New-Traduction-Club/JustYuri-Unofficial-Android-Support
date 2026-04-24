@@ -1,4 +1,4 @@
-﻿# TODO: Translation updated at 2026-04-10 12:53
+﻿
 
 # game/dreams_and_dates.rpy:205
 translate ptbr dates_menu_73ccc00a:

@@ -1,4 +1,4 @@
-﻿# TODO: Translation updated at 2026-04-10 12:53
+﻿
 
 # game/a_jy_dialogue_storage.rpy:3
 translate ptbr repeat_idles_304e2ca5:

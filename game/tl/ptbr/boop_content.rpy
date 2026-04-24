@@ -1,4 +1,4 @@
-﻿# TODO: Translation updated at 2026-04-10 12:53
+﻿
 
 # game/boop_content.rpy:93
 translate ptbr mouse_coords_2a9e1fdc:

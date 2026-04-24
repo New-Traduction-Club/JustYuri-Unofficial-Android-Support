@@ -1,4 +1,4 @@
-﻿# TODO: Translation updated at 2026-04-10 12:53
+﻿
 
 # game/splash.rpy:174
 translate ptbr splashscreen_f490803a:

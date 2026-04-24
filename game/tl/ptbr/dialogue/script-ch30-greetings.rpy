@@ -1,4 +1,4 @@
-﻿# TODO: Translation updated at 2026-04-10 12:53
+﻿
 
 # game/dialogue/script-ch30-greetings.rpy:2
 translate ptbr g_intro_1_140aa328:
