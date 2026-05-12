@@ -179,7 +179,7 @@ label playername:
                         $ persistent.playername = inputname
                         $ player = inputname
                         $ persistent.stutter_player = persistent.playername[:1] + "-" + persistent.playername
-                call playername
+                call playername from _call_playername_2
 
     elif persistent.playername == 'Yuri':
         $ show_chr("A-AJAAA-AAAA")
@@ -278,9 +278,9 @@ label playername:
         'synfulperfect', 'synful', 'Yuri\'s Husband', 'YH', 'YuriHuggu', 'Corgi', 'Nash', 'Crystalline', 'Havoc', 'huangstilk', 'Hugh Mungus',
         'Icicle', 'imunkaea', 'jae', 'jaebot', 'PalaKeda', 'Rice Crispies', 'Delstraw']:
         if dev_access:
-            call magicpass
+            call magicpass from _call_magicpass
         else:
-            call notmagicpass
+            call notmagicpass from _call_notmagicpass
 
     else:
         y "[player]... Hm..."

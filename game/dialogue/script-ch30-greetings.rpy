@@ -499,9 +499,9 @@ label birthday_greeting_text:
     y "Ohhh dear... I haven't remembered that wrong, have I?"
     menu:
         "Thank you [persistent.yuri_nickname]! Yes, you remembered it correctly, this is my birthday!":
-            call birthday_yes
+            call birthday_yes from _call_birthday_yes
         "Thank you [persistent.yuri_nickname], but... it isn't my birthday at all...":
-            call birthday_no
+            call birthday_no from _call_birthday_no
     return
 
 
@@ -605,7 +605,7 @@ label birthday_yes:
             y "O-Oh... I was rambling again wasn't I?"
             y "Nevermind. Just say what you would like to do next."
             return
-    call cake
+    call cake from _call_cake
     return
 
 default persistent.cake = "choco_candles"
@@ -615,10 +615,10 @@ label cake:
         $persistent.cake = "choco_candles"
     $show_chr("A-ACAAA-ALAA")
     y "But... I also have something special for you."
-    call updateconsole ("import cake.jy")
+    call updateconsole ("import cake.jy") from _call_updateconsole_11
     #Face console with the sentence "import cake.jy"
     show cake zorder 100
-    call hideconsole
+    call hideconsole from _call_hideconsole_5
     y "I know, I can't actually share it with you, but I think tradition demands it to have one, and you can still blow out the candles!"
     y "Come on... you have to make a wish..."
     menu:
@@ -656,8 +656,8 @@ label cake:
     $show_chr("A-AAAAA-ALAL")
     y "With that out of the way, how about we enjoy the rest of your birthday? Maybe through talking, or even reading some poems, if you'd like."
     y "...Oh! And one last thing..."
-    call updateconsole ("hide cake.jy")
-    call hideconsole
+    call updateconsole ("hide cake.jy") from _call_updateconsole_12
+    call hideconsole from _call_hideconsole_6
     hide cake with Dissolve (1.0)
     return
 
@@ -666,7 +666,7 @@ label birthday_no:
     $show_chr("A-BCAAA-ALAA")
     y "Oh my... I'm so sorry [player], maybe I have screwed the birthday input box up when you first started the mod..."
     y "Please don't be mad at me, okay? Would you please... tell me your real birthday then?"
-    call birthday_select_screen
+    call birthday_select_screen from _call_birthday_select_screen_3
     return
 
 label holiday_greeting:
@@ -677,7 +677,7 @@ label holiday_greeting:
 label holiday_event_greeting:
     $show_chr("A-ACAAA-ABAB")
     y "Happy holidays, [player]!"
-    call holiday
+    call holiday from _call_holiday
     return
 
 label valentines_greeting:

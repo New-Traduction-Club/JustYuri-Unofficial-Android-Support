@@ -189,7 +189,7 @@ image highway_yuri_car = im.Scale("images/dreams/highway/highway_yuri.png", 1280
 label dream_menu:
     if not renpy.seen_label('dream_menu_2'):
         $ DisableTalk()
-        call showpoem(poem_sp5, music = False)
+        call showpoem(poem_sp5, music = False) from _call_showpoem_37
 label dream_menu_2:
     $ Dream_type = "dream"
     jump dates_and_dreams_system
@@ -843,13 +843,13 @@ label highway_dream:
     #[This is where an element of random chance comes in]
     $renpy.call("highway_dream_" + str(highway_dream_path))
     if highway_dream_path == 1:
-        call highway_dream_1
+        call highway_dream_1 from _call_highway_dream_1
     elif highway_dream_path == 2:
-        call highway_dream_2
+        call highway_dream_2 from _call_highway_dream_2
     elif highway_dream_path == 3:
-        call highway_dream_3
+        call highway_dream_3 from _call_highway_dream_3
     elif highway_dream_path == 4:
-        call highway_dream_4
+        call highway_dream_4 from _call_highway_dream_4
     jump ch30_loop
 
 #[Result 1: "Let's check out that scenic overlook!"]
@@ -1183,7 +1183,7 @@ label stroll_dream:
         $tc_class.transition("yuri_kotatsu_2", speed=2.5)
     python:
         renpy.music.play(current_music, "music", True)
-    call ch30_loop
+    call ch30_loop from _call_ch30_loop_7
 
 ##################
 ####NIGHTMARES####
@@ -2230,9 +2230,9 @@ label giftgiving:
             if gifts[0].size() > 0:
                 $ gifts[0].call_intro()
             else:
-                call gift_intro_date
+                call gift_intro_date from _call_gift_intro_date
         else:
-            call gift_intro_date
+            call gift_intro_date from _call_gift_intro_date_1
         
         menu:
             "But I can't let such a fine and elegant lady be without...":
@@ -3882,7 +3882,7 @@ label check:
     y "Because [player], [placeholder], {b}you{/b} mean a lot to me."
 
     #poem reading time :D
-    call showpoem(poem_beach)
+    call showpoem(poem_beach) from _call_showpoem_38
 
     y "Okay, [player], what do you think about my poem?"
     y "Do you like it?"
@@ -4085,17 +4085,17 @@ label vday_2024_revisit:
             y "So, would you like to revisit this moment?"
             menu:
                 "Yes [persistent.yuri_nickname], let's go!":
-                    call vday24
+                    call vday24 from _call_vday24
 
                 "Maybe not now [persistent.yuri_nickname].":
                     $ show_chr("A-ABBAA-ADAA")
                     y "Oh. Alright [player], I can wait until you're ready."
-                    call ch30_loop
+                    call ch30_loop from _call_ch30_loop_8
 
 label vday24:
     $ show_chr("A-ABAAA-AAAA")
     y "Alright. Here we go."
-    call vday_2024_date
+    call vday_2024_date from _call_vday_2024_date
 
 label vday_2024_date:
     show black zorder 105 with Dissolve (2.5)

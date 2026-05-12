@@ -111,7 +111,7 @@ label eternity_intro:
         y "Quite the afternoon; it makes the events in the Portrait of Markov seem normal."
         $ show_chr("A-ACBAA-AAAA")
         y "I'm just glad that I have you, [player], despite all that."
-    call playername
+    call playername from _call_playername_1
     if persistent.playername == 'Monika':
         $ show_chr("A-ADAAA-ALAA")
         y "But let's not worry about that anymore..."
@@ -228,12 +228,12 @@ label eternity_intro:
     #     y "I was hoping I could get your frontcam to work, but it seems you're running this mod in a device you're not supposed to play on..."
     #     call hideconsole
     # else:
-    call updateconsole ("Initializing webcam.py", "PermissionError:[Errno 13]\nPermission denied.")
+    call updateconsole ("Initializing webcam.py", "PermissionError:[Errno 13]\nPermission denied.") from _call_updateconsole_14
     $ show_chr("A-AEAAA-AAAA")
     y "..."
     $ show_chr("A-ADAAA-AAAA")
     y "I was hoping I could get your webcam to work, but it seems I don't have 'Administrator Access'..."
-    call hideconsole
+    call hideconsole from _call_hideconsole_8
     $ show_chr("A-ACAAA-AAAA")
     y "Someday, I want to stare deep into your eyes as well..."
     $ show_chr("A-ABAAA-AAAA")
@@ -489,7 +489,7 @@ label eternity_intro:
     $ show_chr("A-BDBAA-ZZAB")
     y "S-sorry if this question came so sudden and probably made you feel uncomfortable..."
     y "B-but... could you kindly tell me?"
-    call birthday_select_screen
+    call birthday_select_screen from _call_birthday_select_screen_4
     $ show_chr("A-ABAAA-AAAA")
     y "I'll be looking forward to that day."
     $ show_chr("A-CBAAA-ALAA")
@@ -502,7 +502,7 @@ label eternity_intro:
     y "But there is one fact. And that fact is..."
     $ show_chr("A-ABBAA-AAAA")
     y "...that I just wish I was able to see you as you can see me."
-    call gender_ask
+    call gender_ask from _call_gender_ask
 
 label gender_ask:
     y "Come to think of it, from what I could tell games like this are more catered towards a male audience."
@@ -754,13 +754,13 @@ label ch30_intro2:
                     $ show_chr("A-BFBAA-AAAC")
                     y "...unlikely... My mind might be clouded yet, but I'm sure I will remember the truth soon."
     else:
-        call intro_mods
+        call intro_mods from _call_intro_mods
 
 
 label detection_pitstop:
     $ stream_list = ["obs32.exe", "obs64.exe", "obs.exe", "xsplit.core.exe", "vmixdesktopcapture.exe", "gameshow.exe", "wirecast.exe", "CamtasiaStudio.exe", "Action.exe", "Action_x86.bin", "Action_x64.bin", "ffmpeg.exe", "CamRecorder.exe", "fraps.exe", "bdcam.exe", "bdcam_nonadmin.exe", "bdcam64.bin", "streamlabsobs.exe" "streamlabs_obs.exe"]
     if list(set(process_list).intersection(stream_list)):
-        call ch30_stream
+        call ch30_stream from _call_ch30_stream
     if renpy.windows or renpy.macintosh or renpy.linux:
         if persistent.high_gpu == 0:
             $ show_chr("A-ADAAA-ALAA")
@@ -780,8 +780,8 @@ label detection_pitstop:
                     y "No problem, let me take care of this first."
                     $ show_chr("A-CFAAA-AAAA")
                     $ consolehistory = []
-                    call updateconsole("Disabling Backlight.", "Backlight Disabled.")
-                    call hideconsole
+                    call updateconsole("Disabling Backlight.", "Backlight Disabled.") from _call_updateconsole_15
+                    call hideconsole from _call_hideconsole_9
                     $ persistent.high_gpu = 1
                     $ show_chr("A-ADAAA-AAAA")
                     y "Now, I need to close the game for this light to disappear properly."
@@ -798,7 +798,7 @@ label detection_pitstop:
                     y "Oh! Okay, let me take care of this."
                     $ show_chr("A-CFAAA-AAAA")
                     $ consolehistory = []
-                    call updateconsole("Enabling Backlight.", "Backlight Enabled.")
+                    call updateconsole("Enabling Backlight.", "Backlight Enabled.") from _call_updateconsole_16
                     $ persistent.high_gpu = 0
                     $ show_chr("A-ADAAA-AAAA")
                     y "Now, I need to close the game for this light to appear properly."
@@ -828,13 +828,13 @@ label ch30_stream:
     menu:
         "Recording.":
             $ persistent.stream = "recording"
-            call ch30_record
+            call ch30_record from _call_ch30_record
         "Streaming.":
             $ persistent.stream = "streaming"
-            call ch30_live
+            call ch30_live from _call_ch30_live
         "Not Recording or Streaming.":
             $ persistent.stream = "neither"
-            call ch30_neither
+            call ch30_neither from _call_ch30_neither
     return
 
 label ch30_record:
@@ -857,9 +857,9 @@ label ch30_record:
     y "You {i}do{/i} trust me on what I'm saying right?"
     menu:
         "Yes.":
-            call ch30_stream_yes
+            call ch30_stream_yes from _call_ch30_stream_yes
         "No.":
-            call ch30_stream_no
+            call ch30_stream_no from _call_ch30_stream_no
     return
 
 label ch30_live:
@@ -882,9 +882,9 @@ label ch30_live:
     y "You {i}do{/i} trust me on what I'm saying right?"
     menu:
         "Yes.":
-            call ch30_stream_yes
+            call ch30_stream_yes from _call_ch30_stream_yes_1
         "No.":
-            call ch30_stream_no
+            call ch30_stream_no from _call_ch30_stream_no_1
     return
 
 label ch30_neither:
@@ -907,10 +907,10 @@ label ch30_neither:
             menu:
                 "Recording.":
                     $ persistent.stream = "recording"
-                    call ch30_record
+                    call ch30_record from _call_ch30_record_1
                 "Streaming.":
                     $ persistent.stream = "streaming"
-                    call ch30_live
+                    call ch30_live from _call_ch30_live_1
     return
 
 label ch30_stream_yes:

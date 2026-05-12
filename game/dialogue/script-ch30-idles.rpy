@@ -143,7 +143,7 @@ label idle_3: #Game Theory's YouTube channel, Portrait of Markov and Self-Percep
                         if karma_lvl() == 5:
                             $show_chr("A-BFBBA-ALAL")
                             y "Well umm... now that you mention it I... have something to tell you as well. That isn't exactly how I have planned it but... this moment is as good as any other I guess? So..."
-                            call a33
+                            call a33 from _call_a33_1
                         else:
                             $show_chr("A-BFBBA-ALAL")
                             y "...."
@@ -315,13 +315,13 @@ label idle_7: # Am I pretty?
         y "I-I'm sorry. I hope you're okay with me, you know, s-saying that... heh, heh."
         menu:
             "Pretty doesn't do you justice.":
-                call verypretty
+                call verypretty from _call_verypretty
             "[persistent.yuri_nickname], I think you're very pretty!":
-                call pretty
+                call pretty from _call_pretty
             "[persistent.yuri_nickname], you're not that pretty.":
-                call ugly
+                call ugly from _call_ugly
             "...":
-                call veryugly
+                call veryugly from _call_veryugly
     else:
         $ call_dialogue()
     return
@@ -482,13 +482,13 @@ label idle_9: #The Pen.
     y "So... um, [player]. Do you, er, do you want that pen I took from you back?"
     menu:
         "Yes, please. I don't care what you did with it.":
-            call idle_9_1
+            call idle_9_1 from _call_idle_9_1
         "It's weird... Please give it back.":
-            call idle_9_2
+            call idle_9_2 from _call_idle_9_2
         "No, keep it! If it means something to you, consider it a gift.":
-            call idle_9_3
+            call idle_9_3 from _call_idle_9_3
         "Please let me keep it! I'd like to keep it for... research purposes":
-            call idle_9_4
+            call idle_9_4 from _call_idle_9_4
     return
 
 label idle_9_1:
@@ -796,9 +796,9 @@ label idle_14: #Separation, Frustration, and the Nature of Reality.
         y "And it hurts even more knowing that I make you waste your time on someone who isn't even technically 'real'."
     menu:
         "[persistent.yuri_nickname], please don't be sad. You're real to me.":
-            call touch_yes
+            call touch_yes from _call_touch_yes
         "[persistent.yuri_nickname], I'm sorry that I'm out of your reach, but I'm tired of hearing about it.":
-            call touch_no
+            call touch_no from _call_touch_no
     return
 
 label touch_yes:
@@ -976,11 +976,11 @@ label idle_18: #Blood and Being Different.
     y "I guess I really am different from others..."
     menu:
         "I don't mind, [persistent.yuri_nickname]. I like you because you are different.":
-            call dont_mind18
+            call dont_mind18 from _call_dont_mind18
         "...":
-            call no_response18
+            call no_response18 from _call_no_response18
         "[persistent.yuri_nickname], be yourself around me. I promise, I like the real you. But since you already brought it up, I would like to talk to you about that.":
-            call be_yourself18
+            call be_yourself18 from _call_be_yourself18
     return
 
 label dont_mind18:
@@ -1300,11 +1300,11 @@ label idle_23: #Insecurity, Seeking Validation and "Why Did You Choose Me?".
     y "I don't want to ask and sound like I doubt you or suspect you! I... um..."
     menu:
         "Don't be afraid to ask. You can talk to me about anything.":
-            call dont_afraid23
+            call dont_afraid23 from _call_dont_afraid23
         "Go on. Just say it.":
-            call sayit23
+            call sayit23 from _call_sayit23
         "Say it, don't say it. It doesn't matter to me.":
-            call neutral23
+            call neutral23 from _call_neutral23
     return
 
 label dont_afraid23:
@@ -1316,7 +1316,7 @@ label dont_afraid23:
     else:
         y "Even if this sounds very sudden and unexpected... It feels like I can be myself around you, it feels nice and welcoming"
         $show_chr("A-BCBAA-AAAA") #Former Code c-A0b
-        call makesyouloveme
+        call makesyouloveme from _call_makesyouloveme
     return
 
 label sayit23:
@@ -1327,7 +1327,7 @@ label sayit23:
     pause 2
     python:
         renpy.music.play(current_music, "music", True)
-    call makesyouloveme
+    call makesyouloveme from _call_makesyouloveme_1
     return
 
 label neutral23:
@@ -1335,7 +1335,7 @@ label neutral23:
     $show_chr("A-AEBAA-AAAA") #Former Code c-A0d
     y "I... well... I'm really s-sorry to bother you with this."
     y "I just... Let me just get it over with so I... d-don't bother you anymore... I'm sorry..."
-    call makesyouloveme
+    call makesyouloveme from _call_makesyouloveme_2
     return
 
 label makesyouloveme:
@@ -1363,11 +1363,11 @@ label makesyouloveme:
         y "Would you please tell me, what was the reason that led to me being here now?"
     menu:
         "I chose you because you're a selfless person, who would do anything to make others feel better, even at the cost of your own happiness":
-            call why_i_chose23
+            call why_i_chose23 from _call_why_i_chose23
         "I chose you because you are gentle and kind.":
-            call gentle23
+            call gentle23 from _call_gentle23
         "I just did. I'm not really sure why.":
-            call i_just_did23
+            call i_just_did23 from _call_i_just_did23
     return
 
 label why_i_chose23:
@@ -2074,8 +2074,8 @@ label idle_34: #Skynet, a Joke, and World Domination
                     y "Forgive me [player]... I just wanted to be funny for a change... please don't be mad at me..."
         y "One sec..."
         $ consolehistory = []
-        call updateconsole ("Disabling yuri-custom/scary_room_glitch...", "Done.")
-        call hideconsole
+        call updateconsole ("Disabling yuri-custom/scary_room_glitch...", "Done.") from _call_updateconsole_13
+        call hideconsole from _call_hideconsole_7
         hide room_glitch
         python:
             renpy.music.play(current_music, "music", True)
@@ -2152,15 +2152,15 @@ label idle_36: #Superpowers and Their Implications
     y "I'm sorry if the options are limited... I'm still working on the kinks in the choice system..."
     menu:
         "Mind Reading":
-            call idle_36_mindreading
+            call idle_36_mindreading from _call_idle_36_mindreading
         "Flight":
-            call idle_36_flight
+            call idle_36_flight from _call_idle_36_flight
         "Invisibility":
-            call idle_36_invis
+            call idle_36_invis from _call_idle_36_invis
         "Super Strength":
-            call idle_36_super
+            call idle_36_super from _call_idle_36_super
         "Immortality":
-            call idle_36_immortality
+            call idle_36_immortality from _call_idle_36_immortality
     $show_chr("A-ACAAA-ALAA") #former code b-A0b
     y "I really like having these types of conversations with you, you know. Silly little things."
     return
@@ -2780,7 +2780,7 @@ label idle_42: #Motherhood, Legacy, and Existential Doubt
                                                 y "Really?"
                                                 karma 2
                                                 y "Well... I guess we can discuss that matter if you really want to..."
-                                                call idle_42_success
+                                                call idle_42_success from _call_idle_42_success
                                                 return
                                             "Any time.":
                                                 y "..."
@@ -2841,9 +2841,9 @@ label idle_42_success: #The Good Path
     menu:
         y "W-What do you think, [player]? Do you think I would be ready for such a giant leap in my life? With you?"
         "I think you'd be a great mom.":
-            call idle_42_1y
+            call idle_42_1y from _call_idle_42_1y
         "With me by your side, I think we can get far.":
-            call idle_42_2y
+            call idle_42_2y from _call_idle_42_2y
     return
 
 label idle_42_1y:
@@ -2870,29 +2870,29 @@ label idle_42_2y:
         y "Speaking of which, how do you feel about being a father, [player]?"
         menu:
             "I'm looking forward to it.":
-                call choice1father
+                call choice1father from _call_choice1father
             "I don't know how to feel about the whole situation.":
-                call choice2father
+                call choice2father from _call_choice2father
             "I don't want to be a father.":
-                call choice3father
+                call choice3father from _call_choice3father
     elif not persistent.male:
         y "Speaking of which, how do you feel about being a mother, [player]?"
         menu:
             "I'm looking forward to it.":
-                call choice1father
+                call choice1father from _call_choice1father_1
             "I don't know how to feel about the whole situation.":
-                call choice2father
+                call choice2father from _call_choice2father_1
             "I don't want to be a mother.":
-                call choice3father
+                call choice3father from _call_choice3father_1
     else:
         y "Speaking of which, how do you feel about being a parent, [player]?"
         menu:
             "I'm looking forward to it.":
-                call choice1father
+                call choice1father from _call_choice1father_2
             "I don't know how to feel about the whole situation.":
-                call choice2father
+                call choice2father from _call_choice2father_2
             "I don't want to be a parent.":
-                call choice3father
+                call choice3father from _call_choice3father_2
     return
 
 label choice1father:
@@ -3339,9 +3339,9 @@ label idle_49: #Space Exploration, Aliens, and Philosophical Speculation
             #If Sanity is high, call to label idle_49_Vulcan
             #If Sanity is low, call to label idle_49_Masterrace
             if sanity_lvl() >= 3:
-                call idle_49_Vulcan
+                call idle_49_Vulcan from _call_idle_49_Vulcan
             else:
-                call idle_49_Masterrace
+                call idle_49_Masterrace from _call_idle_49_Masterrace
     return
 
 label idle_49_Vulcan:
@@ -3384,9 +3384,9 @@ label idle_49_Masterrace:
         "Outlandish indeed... You have to admit that this topic is a bit nerdy...":
             karma -2
             if persistent.steam:
-                call idle_49_steam
+                call idle_49_steam from _call_idle_49_steam
             else:
-                call idle_49_normie
+                call idle_49_normie from _call_idle_49_normie
     return
 
 label idle_49_steam:
@@ -4566,7 +4566,7 @@ label idle_74: #Renaming Yuri and Defining Her Identity
             menu:
                 y "I hope it's not too much to ask for but... would you like to give me a new name?"
                 "As you wish... I will pick a nice one...":
-                    call a27
+                    call a27 from _call_a27
                     $show_chr("A-CCABA-AAAD")
                     y "That's a beautiful name... thank you, [player]."
                 "I don't know how to feel about it... all the memories and the tears we shared... all of this we had when you were Yuri! And that's worth so much to me...":
@@ -4597,7 +4597,7 @@ label idle_74: #Renaming Yuri and Defining Her Identity
             menu:
                 y "I mean, you were the one who gave me this new life, so I think it's only fair if you have a say in it as well."
                 "As you wish... I will pick a nice one...":
-                    call a27
+                    call a27 from _call_a27_1
                     $show_chr("A-CCABA-AAAD")
                     y "That's a beautiful name... thank you, [player]."
                 "I don't know how to feel about it... all the memories and the tears we shared... all of this we had when you were Yuri! And that's worth so much to me...":
@@ -5238,7 +5238,7 @@ label idle_81: #Hobbies and Getting to Know the Player
         y "You know... I was talking about myself for a while but I realized that I don't really know much about you."
         y "I want to know you better [player]. You mean a lot to me, and I want to be part of your life. And the only way to do so is to know as much about you as possible."
     y "I would like to ask you a question if you don't mind."
-    call hobbies
+    call hobbies from _call_hobbies
     return
 
 label hobbies:
@@ -5631,22 +5631,22 @@ label literature:
     y "But now I just have to ask if you don't mind... what is your favorite genre?"
     menu:
         "You might laugh but... it's poetry!":
-            call poetry
+            call poetry from _call_poetry
             #Ad information to Persistent: "LitGenre=Poetry"
         "Ummm... don't hate me... Manga.":
-            call noliteratureatall
+            call noliteratureatall from _call_noliteratureatall
             #Ad information to Persistent: "LitGenre=Manga"
         "Fantasy and Science Fiction":
-            call fantsci
+            call fantsci from _call_fantsci
             #Ad information to Persistent: "LitGenre=Fantasy and SciFi"
         "Romance...":
-            call romance
+            call romance from _call_romance
             #Ad information to Persistent: "LitGenre=Romance"
         "You might be surprised. It's horror.":
-            call horror
+            call horror from _call_horror
             #Ad information to Persistent: "LitGenre=Horror"
         "Something else.":
-            call elsel
+            call elsel from _call_elsel
             #Ad information to Persistent: "LitGenre=NoneOfThem"
     return
 
@@ -6062,24 +6062,24 @@ label collector:
     y "Fascinating, may I ask what exactly you are collecting?"
     menu:
         "Coins":
-            call coins
+            call coins from _call_coins
         "Miniatures":
-            call miniatures
+            call miniatures from _call_miniatures
         "Trading Cards":
             #Persistent "TCG"
-            call tcg
+            call tcg from _call_tcg
         #"Knives": #dialogue incomplete
             #karma 1
             #call knives
         "Comics and Manga":
-            call cm
+            call cm from _call_cm
         #"Books": #dialogue non-existent
         #    karma 1
         #    call books #from _call_books
         "Fan Merchandise":
-            call merch
+            call merch from _call_merch
         "Else":
-            call elsec
+            call elsec from _call_elsec
     return
 
 label coins:
@@ -8206,7 +8206,7 @@ label idle_104: # AI Advancements and the "Virtual Wife" Concept
                 $show_chr("A-DEBAA-ALAA")
                 y "Then... then go! Leave! Find someone else to torment! I don't need you! I don't need anyone!"
                 y "Just... just get out of here!"
-                call save_and_quit_but_its_abrupt
+                call save_and_quit_but_its_abrupt from _call_save_and_quit_but_its_abrupt
 
     if sanity_lvl() >= 3:
         $show_chr("A-BFAAA-ALAA")

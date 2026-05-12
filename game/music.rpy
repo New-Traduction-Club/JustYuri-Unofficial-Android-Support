@@ -140,7 +140,7 @@ label change_music:
             y "Okay then."
             $ show_chr("A-ABBAA-AAAA")
             y "No need to rush."
-    call ch30_loop
+    call ch30_loop from _call_ch30_loop_9
 
 screen music_menu(items, orientation="vertical"):
     zorder 1

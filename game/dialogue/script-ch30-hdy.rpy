@@ -772,7 +772,7 @@ label HDY_a:
     hdy "Check out Gawr Gura on YouTube to understand."
     hdy "That shark girl legally owns a letter of the alphabet! I'm gonna get papers now! True facts!"
     #she presents a "poem" paper showing ‘Gura oans teh ferst leter of teh alpoabeet'
-    call showpoem(poem_hdy_guraownership, music=False)
+    call showpoem(poem_hdy_guraownership, music=False) from _call_showpoem_35
     hdy "Here I will help ya. Click {a=https://www.youtube.com/watch?v=dBK0gKW61NU}here{/a}"
     #open link to the intro vid
     #https://www.youtube.com/watch?v=dBK0gKW61NU
@@ -1318,7 +1318,7 @@ label HDY_wonderwall:
 label HDY_Hotdogspoem:
     hdy "[player], I think I found something that would interest you."
     hdy "It's a poem written about my glory and eternal power."
-    call showpoem(poem_hdy, music=False, paper="images/poem_game/poems/poem_y2.jpg")
+    call showpoem(poem_hdy, music=False, paper="images/poem_game/poems/poem_y2.jpg") from _call_showpoem_36
     hdy "Yes, those are ketchup and mustard stains on the paper."
     hdy "What can I say? I got excited while reading it."
 

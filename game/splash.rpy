@@ -229,7 +229,7 @@ label splashscreen:
         with Dissolve(1.5)
 
         if not persistent.has_merged:
-            call import_ddlc_persistent
+            call import_ddlc_persistent from _call_import_ddlc_persistent
 
         $ persistent.first_run = True
 
@@ -311,7 +311,7 @@ label autoload:
     # Pop the _splashscreen label whichB has _confirm_quit as False and other stuff
     if renpy.get_return_stack():
         $ renpy.pop_call()
-    call expression persistent.autoload
+    call expression persistent.autoload from _call_expression_3
 
 label before_main_menu:
     $ config.main_menu_music = audio.t1

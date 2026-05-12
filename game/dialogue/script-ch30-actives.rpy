@@ -819,11 +819,11 @@ label a16:
     $ show_chr("A-CEBBA-AJAJ") #former code Cc-B2d
     menu:
         "It's fine, [persistent.yuri_nickname]. It really is.":
-            call its_fine_a16
+            call its_fine_a16 from _call_its_fine_a16
         "You really shouldn't have done that, [persistent.yuri_nickname].":
-            call shouldnt_have_a16
+            call shouldnt_have_a16 from _call_shouldnt_have_a16
         "Log off right now and don't EVER do that again.":
-            call log_off_a16
+            call log_off_a16 from _call_log_off_a16
     return
 
 label its_fine_a16:
@@ -994,7 +994,7 @@ label a20:
 label a21:
     $ show_chr("A-IBABA-AAAA") #former code Ab-B0a
     y "I'd love to, [player]!"
-    call poetrymenu
+    call poetrymenu from _call_poetrymenu
     return
 
 label poetrymenu:
@@ -1017,7 +1017,7 @@ label poetrymenu:
 label yuripoems:
     menu:
         "Ghost Under the Light":
-            call showpoem(poem_y1)
+            call showpoem(poem_y1) from _call_showpoem
             python:
                 renpy.music.stop(fadeout=3)
                 renpy.music.play(current_music, "music", True)
@@ -1078,7 +1078,7 @@ label yuripoems:
             jump yuripoems
 
         "The Raccoon":
-            call showpoem(poem_y2)
+            call showpoem(poem_y2) from _call_showpoem_1
             python:
                 renpy.music.stop(fadeout=3)
                 renpy.music.play(current_music, "music", True)
@@ -1105,7 +1105,7 @@ label yuripoems:
             jump yuripoems
 
         "Beach":
-            call showpoem(poem_y3)
+            call showpoem(poem_y3) from _call_showpoem_2
             python:
                 renpy.music.stop(fadeout=3)
                 renpy.music.play(current_music, "music", True)
@@ -1121,7 +1121,7 @@ label yuripoems:
             jump yuripoems
 
         "Ghost Under The Light pt. 2":
-            call showpoem(poem_y3b)
+            call showpoem(poem_y3b) from _call_showpoem_3
             python:
                 renpy.music.stop(fadeout=3)
                 renpy.music.play(current_music, "music", True)
@@ -1139,7 +1139,7 @@ label yuripoems:
             jump yuripoems
 
         "Wheel":
-            call showpoem(poem_y22)
+            call showpoem(poem_y22) from _call_showpoem_4
             python:
                 renpy.music.stop(fadeout=3)
                 renpy.music.play(current_music, "music", True)
@@ -1201,7 +1201,7 @@ label yuripoems:
 label natsukipoems:
     menu:
         "Eagles Can Fly":
-            call showpoem(poem_n1)
+            call showpoem(poem_n1) from _call_showpoem_5
             python:
                 renpy.music.stop(fadeout=3)
                 renpy.music.play(current_music, "music", True)
@@ -1250,7 +1250,7 @@ label natsukipoems:
             jump natsukipoems
 
         "Amy Likes Spiders":
-            call showpoem(poem_n2)
+            call showpoem(poem_n2) from _call_showpoem_6
             python:
                 renpy.music.stop(fadeout=3)
                 renpy.music.play(current_music, "music", True)
@@ -1316,7 +1316,7 @@ label natsukipoems:
                     jump natsukipoems
 
         "I'll Be Your Beach":
-            call showpoem(poem_n3)
+            call showpoem(poem_n3) from _call_showpoem_7
             python:
                 renpy.music.stop(fadeout=3)
                 renpy.music.play(current_music, "music", True)
@@ -1332,7 +1332,7 @@ label natsukipoems:
             jump natsukipoems
 
         "Because You":
-            call showpoem(poem_n3b)
+            call showpoem(poem_n3b) from _call_showpoem_8
             python:
                 renpy.music.stop(fadeout=3)
                 renpy.music.play(current_music, "music", True)
@@ -1351,7 +1351,7 @@ label natsukipoems:
 label sayoripoems:
     menu:
         "Dear Sunshine":
-            call showpoem(poem_s1)
+            call showpoem(poem_s1) from _call_showpoem_9
             python:
                 renpy.music.stop(fadeout=3)
                 renpy.music.play(current_music, "music", True)
@@ -1367,7 +1367,7 @@ label sayoripoems:
             jump sayoripoems
 
         "Bottles":
-            call showpoem(poem_s2)
+            call showpoem(poem_s2) from _call_showpoem_10
             python:
                 renpy.music.stop(fadeout=3)
                 renpy.music.play(current_music, "music", True)
@@ -1395,7 +1395,7 @@ label sayoripoems:
 label monikapoems:
     menu:
         "Hole In Wall":
-            call showpoem(poem_m1)
+            call showpoem(poem_m1) from _call_showpoem_11
             python:
                 renpy.music.stop(fadeout=3)
                 renpy.music.play(current_music, "music", True)
@@ -1409,7 +1409,7 @@ label monikapoems:
             jump monikapoems
 
         "Hole In Wall (2)":
-            call showpoem(poem_m21)
+            call showpoem(poem_m21) from _call_showpoem_12
             python:
                 renpy.music.stop(fadeout=3)
                 renpy.music.play(current_music, "music", True)
@@ -1428,7 +1428,7 @@ label monikapoems:
             jump monikapoems
 
         "Save Me":
-            call showpoem(poem_m2)
+            call showpoem(poem_m2) from _call_showpoem_13
             python:
                 renpy.music.stop(fadeout=3)
                 renpy.music.play(current_music, "music", True)
@@ -1444,7 +1444,7 @@ label monikapoems:
             jump monikapoems
 
         "Save Me (2)":
-            call showpoem(poem_m22)
+            call showpoem(poem_m22) from _call_showpoem_14
             python:
                 renpy.music.stop(fadeout=3)
                 renpy.music.play(current_music, "music", True)
@@ -1463,7 +1463,7 @@ label monikapoems:
             jump monikapoems
 
         "The Lady Who Knows Everything":
-            call showpoem(poem_m3)
+            call showpoem(poem_m3) from _call_showpoem_15
             python:
                 renpy.music.stop(fadeout=3)
                 renpy.music.play(current_music, "music", True)
@@ -1479,7 +1479,7 @@ label monikapoems:
             jump monikapoems
 
         "Happy End":
-            call showpoem(poem_m4)
+            call showpoem(poem_m4) from _call_showpoem_16
             python:
                 renpy.music.stop(fadeout=3)
                 renpy.music.play(current_music, "music", True)
@@ -1522,7 +1522,7 @@ label specialpoems:
     jump poetrymenu
 
 label specialpoems_club:
-    call showpoem(poem_sp1)
+    call showpoem(poem_sp1) from _call_showpoem_17
     python:
         renpy.music.stop(fadeout=3)
         renpy.music.play(current_music, "music", True)
@@ -1565,7 +1565,7 @@ label specialpoems_opacity:
     y "Uniquely, this stream of consciousness composition may even reference the author's experience writing this very work!"
     y "Reading it through a second time added to the experience, as hidden nuances became clear and added sharpness and depth to the imagery."
     y "It is an enjoyable and exquisite poem, and I recommend it to you should you have a few moments to read it."
-    call showpoem(poem_sp2)
+    call showpoem(poem_sp2) from _call_showpoem_18
     python:
         renpy.music.stop(fadeout=3)
         renpy.music.play(current_music, "music", True)
@@ -1584,7 +1584,7 @@ label specialpoems_opacity:
     jump specialpoems
 
 label specialpoems_mold:
-    call showpoem(poem_sp3)
+    call showpoem(poem_sp3) from _call_showpoem_19
     python:
         renpy.music.stop(fadeout=3)
         renpy.music.play(current_music, "music", True)
@@ -1648,7 +1648,7 @@ label specialpoems_mold:
     jump specialpoems
 
 label specialpoems_love:
-    call showpoem(poem_sp4)
+    call showpoem(poem_sp4) from _call_showpoem_20
     python:
         renpy.music.stop(fadeout=3)
         renpy.music.play(current_music, "music", True)
@@ -1755,7 +1755,7 @@ label specialpoems_love:
                     $show_chr("A-BDABA-AMAM")
                     y "Weeeell I... actually also have something to say [player]... I was thinking about how to word it for a while now but.. since we are already on it... {b}Now{/b} would be as good of a time as ever I guess..."
                     #jump confession dialogue
-                    call a33
+                    call a33 from _call_a33
                 else:
                     $show_chr("A-BDABA-AMAM")
                     y "Ummm... Oh.. I'm... I'm sorry, that just came a bit out of nowhere..."
@@ -1772,7 +1772,7 @@ label specialpoems_temptation:
     y "This poem begins with a feeling of being adrift and finding solace in the false pleasure of self-harm, which is a very poignant topic for me."
     $show_chr("A-BCBAA-ABAB")
     y "It resolves with finding comfort and inspiration in another and drawing strength from their presence, which is also a topic I find quite familiar."
-    call showpoem(poem_sp6)
+    call showpoem(poem_sp6) from _call_showpoem_21
     python:
         renpy.music.stop(fadeout=3)
         renpy.music.play(current_music, "music", True)
@@ -1805,7 +1805,7 @@ label specialpoems_crow:
     $show_chr("A-BCBAA-ABAB")
     y "I find it interesting the imagery of a crow and it being dismissed.  In some of what I read, the crow symbolizes death and bad luck.  In others, it represents wisdom, a warning that needs to be hearkened, and change."
     y "Perhaps the crow merits another look by the author, to perhaps better understand what the darkness brings and to make a wise decision on how to act upon it rather than waiting for the fear and darkness to close in."
-    call showpoem(poem_sp7)
+    call showpoem(poem_sp7) from _call_showpoem_22
     python:
         renpy.music.stop(fadeout=3)
         renpy.music.play(current_music, "music", True)
@@ -1835,7 +1835,7 @@ label specialpoems_real:
     y "In this poem, the speaker seems to be addressing his paramour, who is separated by some great distance but whose affection creates a bridge between them."
     $show_chr("A-BCBAA-ABAB")
     y "I agree that long-distance relationships are not a foolish notion.  I-indeed, that is my... only way I could ever experience a relationship of my own..."
-    call showpoem(poem_sp8)
+    call showpoem(poem_sp8) from _call_showpoem_23
     python:
         renpy.music.stop(fadeout=3)
         renpy.music.play(current_music, "music", True)
@@ -1865,7 +1865,7 @@ label specialpoems_real:
     jump specialpoems
 
 label specialpoems_far:
-    call showpoem(poem_sp9)
+    call showpoem(poem_sp9) from _call_showpoem_24
     python:
         renpy.music.stop(fadeout=3)
         renpy.music.play(current_music, "music", True)
@@ -1908,7 +1908,7 @@ label specialpoems_far:
     jump specialpoems
 
 label specialpoems_living:
-    call showpoem(poem_sp11)
+    call showpoem(poem_sp11) from _call_showpoem_25
     python:
         renpy.music.stop(fadeout=3)
         renpy.music.play(current_music, "music", True)
@@ -1962,7 +1962,7 @@ label specialpoems_living:
     jump specialpoems
 
 label specialpoems_beachhead:
-    call showpoem(poem_sp12)
+    call showpoem(poem_sp12) from _call_showpoem_26
     python:
         renpy.music.stop(fadeout=3)
         renpy.music.play(current_music, "music", True)
@@ -2013,7 +2013,7 @@ label specialpoems_beachhead:
     jump specialpoems
 
 label specialpoems_binaryheartbeat:
-    call showpoem(poem_sp13)
+    call showpoem(poem_sp13) from _call_showpoem_27
     python:
         renpy.music.stop(fadeout=3)
         renpy.music.play(current_music, "music", True)
@@ -2081,7 +2081,7 @@ label specialpoems_binaryheartbeat:
     jump specialpoems
 
 label specialpoems_allhallowseve:
-    call showpoem(poem_sp14)
+    call showpoem(poem_sp14) from _call_showpoem_28
     python:
         renpy.music.stop(fadeout=3)
         renpy.music.play(current_music, "music", True)
@@ -2136,7 +2136,7 @@ label specialpoems_allhallowseve:
 
 label specialpoems_parallels:
     y "When sifting through the game's files, I discovered a poem called {i}==When parallels intersect=-<3{/i} by Dandyfoot117#9873, one of the winners of a poetry contest on the discord server for this mod."
-    call showpoem(poem_sp15)
+    call showpoem(poem_sp15) from _call_showpoem_29
     $ show_chr("A-CAABA-ADAA")
     y "{cps=2.5}...{/cps}"
     $ show_chr("A-IBAAA-ADAA")
@@ -2231,7 +2231,7 @@ label specialpoems_parallels:
 
 label specialpoems_icant:
     y "When sifting through the game's files, I discovered a poem called {i}I can't{/i} by PiX911#4952, one of the winners of a poetry contest on the discord server for this mod."
-    call showpoem(poem_sp16)
+    call showpoem(poem_sp16) from _call_showpoem_30
     $show_chr("A-AFBAA-AAAA")
     y "[player]... I don't want to sound self-centered, but do you think this poem is referring to me?"
     menu:
@@ -2344,7 +2344,7 @@ label specialpoems_myyuri:
     $show_chr("A-BCAAA-AMAM")
     extend " How he preferred to be paid for working here on the mod team."
     $show_chr("A-BCAAA-AMAM")
-    call showpoem(poem_sp17)
+    call showpoem(poem_sp17) from _call_showpoem_31
     python:
         renpy.music.stop(fadeout=3)
         renpy.music.play(current_music, "music", True)
@@ -3207,7 +3207,7 @@ label a26: #Why don't we drink some tea, Yuri? #The whole Tea-Dates are only ava
                 y "That's great!"
                 $ show_chr("A-ICGBA-AAAA") #former code Ab-B0b
                 y "Go and make some tea for yourself, I'll be waiting here, don't feel rushed, please..."
-                call teatime
+                call teatime from _call_teatime
             "No":
                 $ show_chr("A-IEBAA-AAAA") #former code Ac-A0d
                 y "That's fine, we can try this another time."
@@ -3219,11 +3219,11 @@ label a26: #Why don't we drink some tea, Yuri? #The whole Tea-Dates are only ava
             else:
                 outcome = random.randint(1, 2)
         if outcome == 1:
-            call teadate1
+            call teadate1 from _call_teadate1
         elif outcome == 2:
-            call teadate2
+            call teadate2 from _call_teadate2
         elif outcome == 3:
-            call teadate3
+            call teadate3 from _call_teadate3
     return
 
 label Roomchange:
@@ -3279,15 +3279,15 @@ label teatime:
             y "I hope you don't think less of me for this, [player]..."
             menu:
                 "You're fine [persistent.yuri_nickname], don't worry about it.":
-                    call yourefine
+                    call yourefine from _call_yourefine
                 "...Let's just continue with the date, alright?":
-                    call letscontinue
+                    call letscontinue from _call_letscontinue
                 "You can be a bit too emotional at times.":
-                    call tooemotional
+                    call tooemotional from _call_tooemotional
         "Nope.":
             $ show_chr("A-CEBBA-AAAA") #former code Ac-B2d
             y "I'm fine with waiting, [player], just let me know whenever it's ready."
-            call teatime
+            call teatime from _call_teatime_1
     return
 
 label yourefine:
@@ -3733,7 +3733,7 @@ label a27: #Nickname code, still needs custom option fixed and facial expression
                     $ persistent.stutter_yuri = persistent.yuri_nickname[:1] + "-" + persistent.yuri_nickname
 
             y "Let's see what name you've selected."
-            call nicknamereactions
+            call nicknamereactions from _call_nicknamereactions
     return
 
 label nicknamereactions:
@@ -3786,7 +3786,7 @@ label nicknamereactions:
 
 #Naming Yuri "Monika"
     if persistent.yuri_nickname in ["Monika", "monika"]:
-        call monika_reaction
+        call monika_reaction from _call_monika_reaction
 
 #Naming Yuri "Sayori"
     if persistent.yuri_nickname in ["Sayori", "sayori"]:
@@ -4358,7 +4358,7 @@ label monika_reaction:
             $ persistent.monika_first = False
             $ renpy.call("save_and_quit_but_its_abrupt")
     else:
-        call ch30_loop
+        call ch30_loop from _call_ch30_loop_1
 
 label a28:
     if renpy.music.is_playing('music'):
@@ -5282,7 +5282,7 @@ label take_time:
     y "These words are for you and you alone."
     $show_chr("A-BDBBA-ALAA")
     y "[player] I- I-!"
-    call showpoem(poem_y24, music=False)
+    call showpoem(poem_y24, music=False) from _call_showpoem_32
     $show_chr("A-BCBBA-ALAA")
     y "..."
     y "Do you accept my confession?"
@@ -5440,7 +5440,7 @@ label a34:
             $ persistent.playername = inputname
             $ player = inputname
             $ persistent.stutter_player = persistent.playername[:1] + "-" + persistent.playername
-    call playername
+    call playername from _call_playername
     return
 
 label a35:
@@ -5558,7 +5558,7 @@ label a35:
             if persistent.bday_day == None or persistent.bday_month == None:
                 $show_chr("A-ACDAA-ABAB")
                 y "Did you even tell me your birthday at all? Would you like to tell me your birthday then please?"
-                call birthday_select_screen
+                call birthday_select_screen from _call_birthday_select_screen
                 python:
                     time_to_month = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"]
                     birthday = str(time_to_month[int(persistent.bday_month) - 1]) + " " + str(persistent.bday_day)
@@ -5582,7 +5582,7 @@ label a35:
                             "Indeed.":
                                 $show_chr("A-ACAAA-ABAE")
                                 y "So, what will your actual birthday be then?"
-                                call birthday_select_screen
+                                call birthday_select_screen from _call_birthday_select_screen_1
                                 python:
                                     time_to_month = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"]
                                     birthday = str(time_to_month[int(persistent.bday_month) - 1]) + " " + str(persistent.bday_day)
@@ -5593,7 +5593,7 @@ label a35:
                                 y "True words indeed..."
                                 $show_chr("A-ACAAA-ABAE")
                                 y "But anyway, what would be the correct date then?"
-                                call birthday_select_screen
+                                call birthday_select_screen from _call_birthday_select_screen_2
                                 python:
                                     time_to_month = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"]
                                     birthday = str(time_to_month[int(persistent.bday_month) - 1]) + " " + str(persistent.bday_day)
@@ -6206,7 +6206,7 @@ label a38:
             $ subprocess.check_output("cmd /c start http://www.scpwiki.com/scp-1281", shell=True)
         elif renpy.linux:
             $ subprocess.check_output("xdg-open http://www.scpwiki.com/scp-1281", shell=True)
-        call scp1281timer
+        call scp1281timer from _call_scp1281timer
     if x == 6:
         $show_chr("A-BCAAA-ABAD")
         y "Not necessarily a favorite, I found it hard to decide on a favorite due to the fact that there are so many really good SCP's out there."
@@ -6218,7 +6218,7 @@ label a38:
             $ subprocess.check_output("cmd /c start http://www.scpwiki.com/scp-4666", shell=True)
         elif renpy.linux:
             $ subprocess.check_output("xdg-open http://www.scpwiki.com/scp-4666", shell=True)
-        call scpkrampusmidpart
+        call scpkrampusmidpart from _call_scpkrampusmidpart
     jump ch30_loop
 
 label scp1281timer:
@@ -6318,7 +6318,7 @@ label WaitSCP4666:
     $show_chr("A-ACAAA-ABAB")
     y "Done already? In this case, please give me a few more minutes. Shouldn't take me too long to catch up."
     $show_chr("A-ICAAA-ABAB")
-    call scpkrampusmidpart_follow
+    call scpkrampusmidpart_follow from _call_scpkrampusmidpart_follow
     return
 
 label DoneSCP4666:
@@ -6376,7 +6376,7 @@ label a39:
         $ subprocess.check_output("cmd /c start http://www.scpwiki.com/scp-4666", shell=True)
     elif renpy.linux:
         $ subprocess.check_output("xdg-open http://www.scpwiki.com/scp-4666", shell=True)
-    call scpkrampusmidpart
+    call scpkrampusmidpart from _call_scpkrampusmidpart_1
     return
 
 label a40:
@@ -6922,7 +6922,7 @@ label caramel_apple:
     y "I highly recommend making the key ingredient, caramel sauce, yourself at home—it's a bit tricky, requiring a candy thermometer to get it right, but worth it."
 
     #insert on-screen note here
-    call showpoem(poem_caramel_apple)
+    call showpoem(poem_caramel_apple) from _call_showpoem_33
 
     $show_chr ("A-AAAAA-AEAB")
     y "If you didn't get that, check your game folder for a .txt file. I wrote everything down for you."
@@ -6965,7 +6965,7 @@ label butterfly_pea_lemonade:
     y "This is a larger recipe, so you may want to scale it down. You'll need..."
 
     #insert on-screen note here
-    call showpoem(poem_butterfly_pea)
+    call showpoem(poem_butterfly_pea) from _call_showpoem_34
 
     $show_chr("A-JAAAA-ADAB")
     y "If you didn't get that, check your game folder for a .txt file. I wrote everything down for you."
@@ -7112,12 +7112,12 @@ label gifting_revamp:
             if gifts[0].size() > 0:
                 $ gifts[0].call_intro()
             elif not Gift.intro_labels:
-                call gift_intro
+                call gift_intro from _call_gift_intro
             else:
                 $ renpy.call(random.choice(Gift.intro_labels))
         else:
             if not Gift.intro_labels:
-                call gift_intro
+                call gift_intro from _call_gift_intro_1
             else:
                 $ renpy.call(random.choice(Gift.intro_labels))
         python:
@@ -8159,7 +8159,7 @@ label webcam:
         y "...I still love you no matter what."
     else:
         y "...I still admire you no matter what."
-    call ch30_loop
+    call ch30_loop from _call_ch30_loop_2
 
 label nnn:
     $ show_chr("A-AFDAA-AAAC")
@@ -8202,4 +8202,4 @@ label nnn:
         y "In short, I don't really see any reason for you to try it. But that is only my opinion. It sounds rather pointless to me if I'm being honest."
     $ show_chr("A-BBBAA-AAAA")
     y "But... let's drop this topic for now. Is there anything else on your mind?"
-    call ch30_loop
+    call ch30_loop from _call_ch30_loop_3

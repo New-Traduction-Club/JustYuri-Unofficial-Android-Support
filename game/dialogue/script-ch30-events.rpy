@@ -510,7 +510,7 @@ label changeoutfit:
                         hide black with Dissolve(2.0)
                         y "Th-there we go..."
                         if not renpy.seen_label("first_valentines_dress_on"):
-                            call first_valentines_dress_on
+                            call first_valentines_dress_on from _call_first_valentines_dress_on
 
                     "Hot Dog Yuri" if hdy_file == True:
                         $show_chr("A-IEAAA-AAAA")
@@ -651,7 +651,7 @@ label birthdaycake_2020_late:
     $show_chr("A-GCAAA-ABAB")
     y "I know it wasn't your fault. It was I who failed to put the happy birthday option into the menu in the first place."
     y "You know what? Why don't we just celebrate right now, shall we?"
-    call birthdaycake_2020_continue
+    call birthdaycake_2020_continue from _call_birthdaycake_2020_continue
     return
 
 label birthdaycake_2020:
@@ -666,25 +666,25 @@ label birthdaycake_2020_continue:
         "Vanilla":
             $show_chr("A-EBABA-AAAA")
             y "Good choice, [player], I'll prepare the cake now..."
-            call updateconsole ("show cake", "$persistent.cake = vanilla")
+            call updateconsole ("show cake", "$persistent.cake = vanilla") from _call_updateconsole_5
             $persistent.cake = "vanilla_candles"
             $show_chr("A-AAABA-AAAA")
             show cake zorder 20
         "Chocolate":
             $show_chr("A-EBABA-AAAA")
             y "Good choice, [player], I'll prepare the cake now..."
-            call updateconsole ("show cake_chocolate", "$persistent.cake = choco")
+            call updateconsole ("show cake_chocolate", "$persistent.cake = choco") from _call_updateconsole_6
             $show_chr("A-AAABA-AAAA")
             $persistent.cake = "choco_candles"
             show cake zorder 20
         "Dark Chocolate":
             $show_chr("A-EBABA-AAAA")
             y "Good choice, [player], I'll prepare the cake now..."
-            call updateconsole ("show cake", "$persistent.cake = dark")
+            call updateconsole ("show cake", "$persistent.cake = dark") from _call_updateconsole_7
             $show_chr("A-AAABA-AAAA")
             $persistent.cake = "dark_candles"
             show cake zorder 20
-    call hideconsole
+    call hideconsole from _call_hideconsole_1
     y "You know..."
     y "We've been together for a while now... and I just have to say..."
     $show_chr("A-CAABA-AAAA")
@@ -726,7 +726,7 @@ label birthdaycake_2020_continue:
     $show_chr("A-AAABA-AAAA")
     y "Now... I guess I should have a slice of cake, right?"
     y "Let me just... get rid of all these candles real quick..."
-    call updateconsole ("hide candles")
+    call updateconsole ("hide candles") from _call_updateconsole_8
     if "vanilla" in str(persistent.cake):
         $persistent.cake = "vanilla"
     if "choco" in str(persistent.cake):
@@ -734,14 +734,14 @@ label birthdaycake_2020_continue:
     if "dark" in str(persistent.cake):
         $persistent.cake = "dark"
     y "..."
-    call hideconsole
+    call hideconsole from _call_hideconsole_2
     y "There we go..."
     y "Now... to cut the cake..."
     $show_chr("A-BABCA-AAAA")
     y "I apologize in advance.{w} I don't want you to see me with cake remaining on my face."
     show black zorder 100 with Dissolve(1.0)
     play sound "sfx/cake_cut.ogg"
-    call updateconsole ("$persistent.cake = cut")
+    call updateconsole ("$persistent.cake = cut") from _call_updateconsole_9
     if "vanilla" in str(persistent.cake):
         $persistent.cake = "vanilla_cut"
     if "choco" in str(persistent.cake):
@@ -749,7 +749,7 @@ label birthdaycake_2020_continue:
     if "dark" in str(persistent.cake):
         $persistent.cake = "dark_cut"
     y "..."
-    call hideconsole
+    call hideconsole from _call_hideconsole_3
     y "Ah... there we go..."
     $show_chr("A-AAABA-AAAA")
     #show cakearm zorder 11
@@ -773,9 +773,9 @@ label birthdaycake_2020_continue:
     y "I love you..."
     $show_chr("A-BAABA-AAAA")
     y "Oh! One last thing."
-    call updateconsole ("hide cake")
+    call updateconsole ("hide cake") from _call_updateconsole_10
     hide cake
-    call hideconsole
+    call hideconsole from _call_hideconsole_4
     $show_chr("A-AAABA-AAAA")
     y "There we go."
     $persistent.cake_done = True
@@ -2580,7 +2580,7 @@ label krampusnacht:
             y "Also, I have a handful of new poems in store. They had another poetry contest on this discord server again."
             y "We could also read some SCP's. I have something special this time, you will find it quite fitting I fancy."
         "Krampusnacht? I don't think I ever heard of it. Care to tell me about it?":
-            call krampuslore
+            call krampuslore from _call_krampuslore
     return
 #The following label is an ACTIVE, it should be placed in "Requests" with the opener "Would you like to tell me what Krampusnacht is about?". It can also be accessed by a specific menu choice in the opening greetings.
 
@@ -2684,7 +2684,7 @@ label valentines:
                         "So, do you have anything special planned for today?":
                             $show_chr("A-JCAAA-ABAD")
                             y "Indeed I do."
-                            call vday_choco_date_intro
+                            call vday_choco_date_intro from _call_vday_choco_date_intro
                 "About that, [persistent.yuri_nickname]... I think I need some space...":
                     $show_chr("A-DCGAA-ABAJ")
                     y "W-{w=0.4}What? D-{w=0.4}Did I do something wrong?"
@@ -2711,11 +2711,11 @@ label valentines:
                         extend " n-nevermind!"
                         $show_chr("A-BCBAA-AMAM")
                         y "I actually had an idea..."
-                        call vday_choco_date_intro
+                        call vday_choco_date_intro from _call_vday_choco_date_intro_1
                     else:
                         $show_chr("A-ACAAA-ABAD")
                         y "I actually had an idea..."
-                        call vday_choco_date_intro
+                        call vday_choco_date_intro from _call_vday_choco_date_intro_2
                 "...":
                     karma -1
                     $show_chr("A-ADBAA-ABAK")
@@ -2764,7 +2764,7 @@ label vday_choco_date_intro:
         y "After doing enough research, I think I was able to make a pretty close replica of the museum, so I'd like to visit it, if you don't mind."
         $show_chr("A-ACAAA-ABAB")
         y "Let me bring it up..."
-        call valentines_2021_date
+        call valentines_2021_date from _call_valentines_2021_date
     else:
         $show_chr("A-ACAAA-ABAB")
         y "Since it's Valentine's day, and I'm in the mood for some chocolate, I was thinking we could visit the chocolate museum again."
@@ -2774,7 +2774,7 @@ label vday_choco_date_intro:
             "Of course!":
                 $show_chr("A-GCAAA-ABAD")
                 y "Great! Let me just..."
-                call valentines_2021_date
+                call valentines_2021_date from _call_valentines_2021_date_1
             "I actually had other ideas...":
                 $show_chr("A-CCAAA-ABAB")
                 y "That's perfectly fine."
@@ -2785,7 +2785,7 @@ label vday_choco_date_intro:
 label vday_choco_date_request: #Anything special planned today, Yuri? / Should only appear feb 12th-16th, and if the player didn't have level 3 karma when they told her happy valentine's / Must have karma level equal 3 or higher to see
     $show_chr("A-ABAAA-ABAK")
     y "Actually, yes. I had an idea for a new date we could go on."
-    call vday_choco_date_intro
+    call vday_choco_date_intro from _call_vday_choco_date_intro_3
     return
 
 #clarification, valentines_2021_date is the actual date, and vday_choco_date_intro is the introduction to said date stemming from the event. vday_choco_date_request is in case the player didn't have level 3 karma when telling yuri happy valentine's and they want vday_choco_date_intro
@@ -3180,7 +3180,7 @@ label critical_choco_point:
         #transition to new background
         show event chocolate_7 zorder 9 with Dissolve(2.0)
         $click_tea_button = 0
-        call choco_timer
+        call choco_timer from _call_choco_timer
 
 label enjoy_chocolate:
     if temp_costume != "valentines":

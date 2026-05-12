@@ -31,9 +31,9 @@ image console_caret_new = Text(">", style="console_text", anchor=(0,0), xpos=30,
 
 
 label clear_console():
-    call updateconsole("import os", "import os")
+    call updateconsole("import os", "import os") from _call_updateconsole
     $consolehistory = []
-    call updateconsole("os.system(cls)", " ")
+    call updateconsole("os.system(cls)", " ") from _call_updateconsole_1
     return
 
 label updateconsole_torrent(log=[(" ", " ")]):
@@ -56,7 +56,7 @@ label updateconsole_torrent(log=[(" ", " ")]):
         $ pause(len(text_element) / 30.0 + 0.5)
         hide ctext
         show console_text "_" as ctext zorder 100
-        call updateconsolehistory(history[x])
+        call updateconsolehistory(history[x]) from _call_updateconsolehistory
         $x += 1
     pause 0.5
     return
@@ -69,7 +69,7 @@ label updateconsole(text="", history=""):
     $ pause(len(text) / 30.0 + 0.5)
     hide ctext
     show console_text "_" as ctext zorder 100
-    call updateconsolehistory (history)
+    call updateconsolehistory (history) from _call_updateconsolehistory_1
     $ pause(0.5)
     return
 
@@ -87,7 +87,7 @@ label updateconsole_old(text="", history=""):
     show console_text "_" as ctext zorder 100
     label updateconsole_loop:
         $ currenttext = text[:textcount]
-        call drawconsole (drawtext=currenttext)
+        call drawconsole (drawtext=currenttext) from _call_drawconsole
         $ pause_duration = 0.08 - (datetime.datetime.now() - starttime).microseconds / 1000.0 / 1000.0
         $ starttime = datetime.datetime.now()
         if pause_duration > 0:
@@ -99,7 +99,7 @@ label updateconsole_old(text="", history=""):
     pause 0.5
     hide ctext
     show console_text "_" as ctext zorder 100
-    call updateconsolehistory (history)
+    call updateconsolehistory (history) from _call_updateconsolehistory_2
     pause 0.5
     return
 
@@ -172,7 +172,7 @@ label updatedevconsole_torrent(log=[("", "")]):
         hide ctext
         show console_text_new "_" as ctext zorder 100:
             pass #xalign 0.014 yalign 1.0
-        call updatedevconsolehistory(history[x])
+        call updatedevconsolehistory(history[x]) from _call_updatedevconsolehistory
         $x += 1
     pause 0.5
     return
@@ -203,7 +203,7 @@ label updatedevconsole_torrent_fast(log=[(" ", " ")]):
         hide ctext
         show console_text_new "_" as ctext zorder 100:
             xalign 0.014 yalign 1.0
-        call updatedevconsolehistory(history[x])
+        call updatedevconsolehistory(history[x]) from _call_updatedevconsolehistory_1
         $x += 1
     return
 
@@ -222,7 +222,7 @@ label updatedevconsolehistory(text=""):
 
 label clear_dev_console():
     $consolehistory = []
-    call updatedevconsole_torrent([("cls", " ")])
+    call updatedevconsole_torrent([("cls", " ")]) from _call_updatedevconsole_torrent
     return
 
 label dev_console_startup:
@@ -230,7 +230,7 @@ label dev_console_startup:
     stop music
     window hide
     show black zorder 90
-    call clear_dev_console()
+    call clear_dev_console() from _call_clear_dev_console
     call updatedevconsole_torrent(
         [('python', '>python'),
         (" ", '{cps=30}\nPython 2.7.14 (v2.7.14:84471935ed, Sep 16 2017, 20:19:30) [MSC v.1500 32 bit (Intel)] on win32\nType "help", "copyright", "credits" or "license" for more information.{/cps}'),
@@ -249,7 +249,7 @@ label dev_console_startup:
         (" ", "For additional security reasons, any and all references to this Console are to be referred to as either 'photoshoppped' or 'great editing'."),
         (" ", "If you are lacking the software update module, please access it through the JY Verified Storage Server: {a}https://discord.gg/kW6vTtW{/a}"),
         (" ", " "),
-        (' ', '>Please Select Desired Option')] )
+        (' ', '>Please Select Desired Option')] ) from _call_updatedevconsole_torrent_1
 label console_choice_test:
     call screen console_choice([("Access Dreams", "dream_access"), ("Experimental Logs", "logs"), ("Exit", "dev_console_exit")])
     jump console_choice_test
@@ -264,7 +264,7 @@ label dream_access:
         (" ", " "),
         (" ", " "),
         (" ", " ")
-        ])
+        ]) from _call_updatedevconsole_torrent_2
 
 label logs:
 
@@ -274,20 +274,20 @@ label logs:
         (" ", " "),
         (" ", " "),
         (" ", " ")
-        ])
+        ]) from _call_updatedevconsole_torrent_3
     return
 
 label dev_console_exit:
-    call clear_dev_console
-    call updatedevconsole_torrent([("exit()", " ")])
+    call clear_dev_console from _call_clear_dev_console_1
+    call updatedevconsole_torrent([("exit()", " ")]) from _call_updatedevconsole_torrent_4
     python:
         import random
         x = random.randint(1, 100)
     if x == 100:
-        call updatedevconsole_torrent_fast([("Wait, what is thi--", " ")])
+        call updatedevconsole_torrent_fast([("Wait, what is thi--", " ")]) from _call_updatedevconsole_torrent_fast
     elif x == 50:
-        call updatedevconsole_torrent_fast([("Sleep, perchance to drea--", " ")])
+        call updatedevconsole_torrent_fast([("Sleep, perchance to drea--", " ")]) from _call_updatedevconsole_torrent_fast_1
     elif x == 25:
-        call updatedevconsole_torrent_fast([("W-what's h-happenin--", " ")])
+        call updatedevconsole_torrent_fast([("W-what's h-happenin--", " ")]) from _call_updatedevconsole_torrent_fast_2
     $persistent.narrative = False
     $renpy.call("save_and_quit_but_its_abrupt")

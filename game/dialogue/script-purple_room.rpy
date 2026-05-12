@@ -35,12 +35,12 @@ label purpleroomintro: #New Intro
         "Yes, of course!":
             $ show_chr("A-CAAAA-AAAA")
             y "Then please, follow me..."
-            call preknife
+            call preknife from _call_preknife
 
         "Maybe not now.":
             $ show_chr("A-ABBAA-AAAA")
             y "Well... alright. Just tell me when you're ready."
-            call ch30_loop
+            call ch30_loop from _call_ch30_loop_4
 
         "Are those dollhouses in your bookshelf?":
             $ show_chr("A-BDAAA-ADAA")
@@ -104,7 +104,7 @@ label purpleroomintro: #New Intro
     $ show_chr("A-AAAAA-ALAA")
     y "..."
     y "Anyway, what would you like to do?"
-    call ch30_loop
+    call ch30_loop from _call_ch30_loop_5
 
 label preknife:
     show black zorder 100 with Dissolve(2.5)
@@ -333,7 +333,7 @@ label room_back:
         $ tc_class.transition("yuri_desk", speed="now")
         pass
 
-    call ch30_loop
+    call ch30_loop from _call_ch30_loop_6
 
 label Kampfmesser: #This is meant to be for the left displays's top left most knife. Black handle.
     y "Ah, the Kampfmesser 2000! A fine piece of military equipment..."

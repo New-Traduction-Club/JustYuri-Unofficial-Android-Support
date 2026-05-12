@@ -89,7 +89,7 @@ label tetris:
                 $ persistent.skin = 5
 
             "Custom Theme.":
-                call custom_tetris_checkpoint_start
+                call custom_tetris_checkpoint_start from _call_custom_tetris_checkpoint_start
 
     else:
         menu:
@@ -112,7 +112,7 @@ label tetris:
                 $ persistent.skin = 4
 
             "Custom Theme.":
-                call custom_tetris_checkpoint_start
+                call custom_tetris_checkpoint_start from _call_custom_tetris_checkpoint_start_1
 
     y "Alright [player], now I can let you select the modes you want to play."
     menu:
@@ -376,14 +376,14 @@ label custom_tetris_repeat_audio:
         $ show_chr("A-BFBAA-AEAD")
         y "Oh, I do wonder what you just might come up with..."
         y "Most likely something ridiculous or nonsensical..."
-    call custom_tetris_checkpoint
+    call custom_tetris_checkpoint from _call_custom_tetris_checkpoint
     return
 
 label custom_tetris_failure:
     $show_chr("A-ACDAA-ABAB")
     y "[player]? It seems you need to fix some issue which I mention"
     y "Perhaps I should explain all steps again"
-    call custom_tetris_repeat
+    call custom_tetris_repeat from _call_custom_tetris_repeat
 
 label custom_tetris_checkpoint:
     menu:

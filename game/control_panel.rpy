@@ -10,21 +10,21 @@ label control_panel:
             $show_chr("standard")
             call screen make_expression
         "Dialogue Calling":
-            call caller_loop
+            call caller_loop from _call_caller_loop
         "Active Menu":
             $call_dialogue(ch30_loop_type, "actives")
         "Ch30_Loop Jump":
-            call ch30_loop
+            call ch30_loop from _call_ch30_loop
         "KS System":
             menu:
                 "Show KS Points":
                     y "Sanity = [persistent.sanity_points], Karma = [persistent.karma_points]"
                 "Alter Karma/Sanity":
-                    call alter_ks
+                    call alter_ks from _call_alter_ks
                 "Nevermind":
                     $pass
         "Time_Tracker System":
-            call alter_time_tracker
+            call alter_time_tracker from _call_alter_time_tracker
         "Seen Label Memory Deletion":
             python:
                 forget_label = renpy.input("Which seen label do you want to forget?")
