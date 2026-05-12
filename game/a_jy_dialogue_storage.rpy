@@ -936,13 +936,14 @@ init -3 python:
         name = None,
         sub_category = None))
 
-    add_dialogue(Dialogue(
-        label = 'folklore_and_myths',
-        category = DialogueAPI.category_idle,
-        conditions = ['karma_lvl() >= 3', 'sanity_lvl() >= 3'],
-        importance = 0,
-        name = None,
-        sub_category = None))
+    # TODO: find missing label folklore_and_myths
+    # add_dialogue(Dialogue(
+    #     label = 'folklore_and_myths',
+    #     category = DialogueAPI.category_idle,
+    #     conditions = ['karma_lvl() >= 3', 'sanity_lvl() >= 3'],
+    #     importance = 0,
+    #     name = None,
+    #     sub_category = None))
 
     add_dialogue(Dialogue(
         label = 'origami',
