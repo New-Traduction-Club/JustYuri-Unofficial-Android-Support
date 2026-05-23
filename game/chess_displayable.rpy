@@ -227,30 +227,33 @@ init python:
     import subprocess # necessary for telling Windows stockfish to not open a popup window
     
     # stockfish engine is OS-dependent
-    stockfish_bin = None
+    STOCKFISH = None
     STARTUPINFO = None
-    # TODO: Implement Native search for android stockfish
+    stockfish_dir = os.path.join(renpy.config.gamedir, THIS_PATH, BIN_PATH)
+
     if renpy.android:
-        stockfish_bin = 'stockfish-10-armv7' # 32 bit
+        android_path = get_android_stockfish_path()
+        if android_path:
+            STOCKFISH = android_path
+        else:
+            STOCKFISH = os.path.join(stockfish_dir, 'stockfish-10-armv7')
     elif renpy.ios:
-        stockfish_bin = 'stockfish-11-64' # FIXME: no iOS stockfish available
+        STOCKFISH = os.path.join(stockfish_dir, 'stockfish-11-64') # FIXME: no iOS stockfish available
     elif renpy.linux:
-        stockfish_bin = 'stockfish_20011801_x64'
+        STOCKFISH = os.path.join(stockfish_dir, 'stockfish_20011801_x64')
     elif renpy.macintosh:
-        stockfish_bin = 'stockfish-11-64'
+        STOCKFISH = os.path.join(stockfish_dir, 'stockfish-11-64')
     elif renpy.windows:
-        stockfish_bin = 'stockfish_20011801_x64.exe'
+        STOCKFISH = os.path.join(stockfish_dir, 'stockfish_20011801_x64.exe')
         STARTUPINFO = subprocess.STARTUPINFO()
         STARTUPINFO.dwFlags = subprocess.STARTF_USESHOWWINDOW
     else:
         raise Exception('No stockfish binary found for your system')
 
     # mark the Mac and Linux stockfish binaries as executable
-    stockfish_dir = os.path.join(renpy.config.gamedir, THIS_PATH, BIN_PATH)
     build.executable(os.path.join(stockfish_dir, 'stockfish-11-64')) # mac
     build.executable(os.path.join(stockfish_dir, 'stockfish_20011801_x64')) # linux
 
-    STOCKFISH = os.path.join(stockfish_dir, stockfish_bin)
 
     class HoverDisplayable(renpy.Displayable):
         """
