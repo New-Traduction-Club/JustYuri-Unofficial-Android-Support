@@ -957,10 +957,12 @@ label tetris_rules:
                 y "I really hope I will be at least some of help for you, [player]."
                 $ show_chr("A-AACAA-AAAA")
 
+    $ show_tetris_controls()
     call screen startTetris(AI_difficulty)
 
 label tetris_over:
     $ change_music(current_music)
+    $ hide_tetris_controls()
     if TetrisWinner == 0:
         if karma_lvl() > 3 and sanity_lvl() > 3:
         #[If K= 4-5 and S= 4&5]
@@ -991,9 +993,11 @@ label tetris_over:
                             elif persistent.skin == 6:
                                 $ change_music("<loop 0>/custom_tetris/tetris.ogg")
 
+                            $ show_tetris_controls()
                             call screen startTetris(AI_difficulty)
 
                         "No":
+                            $ show_tetris_controls()
                             call screen startTetris(AI_difficulty)
                 "No":
                     $ show_chr("A-GBAAA-AMAM")
@@ -1011,6 +1015,7 @@ label tetris_over:
             menu:
                 y "Anyways.. W-would you like to play this again with me [player]...?"
                 "Yes":
+                    $ show_tetris_controls()
                     call screen startTetris(AI_difficulty)
                     $ renpy.music.play()
                 "No":
@@ -1035,6 +1040,7 @@ label tetris_over:
             menu:
                 y "I hope you had a bit of fun too? If you wish we could try another round. Are you up for a rematch?"
                 "Yes":
+                    $ show_tetris_controls()
                     call screen startTetris(AI_difficulty)
                     $ renpy.music.play()
                 "No":
@@ -1054,6 +1060,7 @@ label tetris_over:
             menu:
                 y "Oh but I almost forgot, would you like to play another round with me?"
                 "Yes":
+                    $ show_tetris_controls()
                     call screen startTetris(AI_difficulty)
                     $ renpy.music.play()
                 "No":
@@ -1072,6 +1079,7 @@ label tetris_over:
             menu:
                 extend "Would you like to play another round?"
                 "Yes":
+                    $ show_tetris_controls()
                     call screen startTetris(AI_difficulty)
                     $ renpy.music.play()
                 "No":
@@ -1163,6 +1171,7 @@ label tetris_over:
     jump ch30_loop
 
 screen startTetris(AI_difficulty):
+    $ show_tetris_controls()
     if AI_difficulty != "CO_OP":
         fixed:
             area (150, 120, 600, 1100)
