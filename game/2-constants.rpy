@@ -1,5 +1,5 @@
 #FAKE EXCEPTION APPEARANCE
-image exception_bg = "#dadada"
+image exception_bg = Solid("#dadada")
 image fake_exception = Text("An exception has occurred.", size=40, style="_default")
 image fake_exception3 = Text("While running game code: File \"game/script-ch30.rpy\", line 7370, in script.", size=20, style="_default")
 
@@ -101,10 +101,10 @@ define audio.fall = "sfx/fall.ogg"
 
 define audio.aauhh = "sfx/aauhh.ogg"
 
-image black = "#000000"
-image dark = "#000000e4"
-image darkred = "#110000c8"
-image white = "#ffffff"
+image black = Solid("#000000")
+image dark = Solid("#000000e4")
+image darkred = Solid("#110000c8")
+image white = Solid("#ffffff")
 image end:
     truecenter
     "gui/end.png"
