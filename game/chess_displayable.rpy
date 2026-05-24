@@ -182,15 +182,15 @@ screen chess(fen, player_color, movetime, depth):
             add chess_displayable
             add hover_displayable # hover loc over chesspieces
         if chess_displayable.game_status == CHECKMATE:
-            # use a timer so the player can see the screen once again
-            timer 4.0 action [
-            Return(chess_displayable.winner),
-            renpy.jump("chess_results")  # Add the jump action here
-            ]
+                # use a timer so the player can see the screen once again
+                timer 4.0 action [
+                Return(chess_displayable.winner),
+                Jump("chess_results")  # Add the jump action here
+                ]
         elif chess_displayable.game_status == STALEMATE:
             timer 4.0 action [
             Return(DRAW),
-            renpy.jump("chess_results")  # Add the jump action here
+            Jump("chess_results")  # Add the jump action here
             ]
 
     # right panel for promotion selection
@@ -359,8 +359,8 @@ init python:
                         render.place(self.piece_imgs[piece.symbol()], 
                             x=piece_coord[0], y=piece_coord[1])
 
-            renpy.restart_interaction() # force refresh the screen
-
+            renpy.redraw(self, 0)
+            
             return render
 
         def event(self, ev, x, y, st):
