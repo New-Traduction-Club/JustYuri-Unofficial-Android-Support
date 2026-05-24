@@ -182,11 +182,11 @@ screen chess(fen, player_color, movetime, depth):
             add chess_displayable
             add hover_displayable # hover loc over chesspieces
         if chess_displayable.game_status == CHECKMATE:
-                # use a timer so the player can see the screen once again
-                timer 4.0 action [
-                Return(chess_displayable.winner),
-                Jump("chess_results")  # Add the jump action here
-                ]
+            # use a timer so the player can see the screen once again
+            timer 4.0 action [
+            Return(chess_displayable.winner),
+            Jump("chess_results")  # Add the jump action here
+            ]
         elif chess_displayable.game_status == STALEMATE:
             timer 4.0 action [
             Return(DRAW),
