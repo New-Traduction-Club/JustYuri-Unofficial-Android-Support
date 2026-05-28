@@ -950,6 +950,12 @@ init -999 python:
                 break
         return gift_scenario
 
+    def add_k(*args):
+        """
+        Dummy function to dont break label idle_101
+        """
+        return
+
 init -2 python:
     import datetime
     import math
