@@ -109,7 +109,7 @@ image end:
     truecenter
     "gui/end.png"
 
-image black = "images/black.jpg"
+image black = Solid("#000000")
 
 image bg corridor = "images/bg/ddlc/corridor.png"
 image bg club_day = "images/bg/ddlc/club.png"
