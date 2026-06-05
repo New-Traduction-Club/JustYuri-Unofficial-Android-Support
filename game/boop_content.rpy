@@ -12,18 +12,26 @@ init python:
         global mousex
         global mousey
         import pygame
-        x, y = pygame.mouse.get_pos()
-        store.mousex = x
-        store.mousey = y
+        try:
+            x_py, y_py = pygame.mouse.get_pos()
+        except Exception:
+            x_py, y_py = 0, 0
+        
+        try:
+            x_ren, y_ren = renpy.get_mouse_pos()
+            store.mousex = x_ren
+            store.mousey = y_ren
+        except Exception:
+            store.mousex = x_py
+            store.mousey = y_py
 
 
-    class getMousePosition(renpy.Displayable):
+    class MousePositionDisplayable(renpy.Displayable):
         def __init__(self):
             renpy.Displayable.__init__(self)
 
         def event(self, ev, x, y, st):
             import pygame
-
             if ev.type == pygame.MOUSEBUTTONDOWN:
                 store.mousex = x
                 store.mousey = y
@@ -32,7 +40,7 @@ init python:
             return renpy.Render(1, 1)
 
 
-    store.mousePosition = getMousePosition()
+    store.mousePosition = MousePositionDisplayable()
 
 
     def checkEvent():

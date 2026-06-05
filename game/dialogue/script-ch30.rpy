@@ -71,7 +71,6 @@ label ch30_waitloop:
         boopable = True
         start_time = time.time()
         # renpy.pause(1) # REMOVE THIS - We don't want a long initial pause
-        boopable = False
         # renpy.pause(0.1) # REMOVE THIS -  We don't want a long initial pause
 
     python:
@@ -105,6 +104,7 @@ label ch30_waitloop:
                     selected_dialogue = call_dialogue(ch30_loop_type, "hdy", screener = True)
 
                 if selected_dialogue != None:
+                    boopable = False
                     #if not persistent.HDY:
                     #    call_dialogue(ch30_loop_type, "idles") # Now, trigger dialogue.
                     #else:
@@ -122,10 +122,11 @@ label ch30_waitloop:
                 EnableTalk()
 
 
-            renpy.pause(1, hard=True) # Short pause within the loop.
+            renpy.pause(1) # Short pause within the loop (soft pause to allow interaction).
 
         # If waittime elapses without a natural idle, force one.
         DisableTalk()
+        boopable = False
         if not persistent.HDY:
             call_dialogue(ch30_loop_type, "idles")
         else:
