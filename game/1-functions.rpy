@@ -1553,14 +1553,13 @@ screen yuri_sleep():
             idle "yuri_sleep"
 
 layeredimage yuri_sleep:
-
-    if persistent.costume == "sweater":
-        "yuri_resting_pyjama[current_timecycle_marker]"
-
     if persistent.costume == "school":
         "yuri_resting_school[current_timecycle_marker]"
-
-    if persistent.costume == "valentines":
+    elif persistent.costume == "sweater":
+        "yuri_resting_pyjama[current_timecycle_marker]"
+    elif persistent.costume == "valentines":
+        "yuri_resting_pyjama[current_timecycle_marker]"
+    else:
         "yuri_resting_pyjama[current_timecycle_marker]"
 
 
@@ -1772,21 +1771,33 @@ layeredimage yuri_lewdhug:
         "lewdhug_[persistent.costume]_day"#currently missing for valentines outfit
 
 layeredimage yuri_sleepy:
-    if persistent.bg == "space" and renpy.has_image ("yuri_sleepy" + persistent.costume + "_space"):
+    if persistent.bg == "space" and renpy.has_image("yuri_sleepy_" + persistent.costume + "_space"):
         "yuri_sleepy_[persistent.costume]_space"
-    elif persistent.bg != "space" and renpy.has_image("=" + persistent.costume + current_timecycle_marker):
+    elif persistent.bg == "space" and renpy.has_image("yuri_sleepy_pyjama_space"):
+        "yuri_sleepy_pyjama_space"
+    elif persistent.bg != "space" and renpy.has_image("yuri_sleepy_" + persistent.costume + "_day") and renpy.has_image("yuri_sleepy_" + persistent.costume + current_timecycle_marker):
         "yuri_sleepy_[persistent.costume][current_timecycle_marker]"
-    else:
+    elif persistent.bg != "space" and not renpy.has_image("yuri_sleepy_" + persistent.costume + "_day") and renpy.has_image("yuri_sleepy_pyjama" + current_timecycle_marker):
+        "yuri_sleepy_pyjama[current_timecycle_marker]"
+    elif renpy.has_image("yuri_sleepy_" + persistent.costume + "_day"):
         "yuri_sleepy_[persistent.costume]_day"
+    else:
+        "yuri_sleepy_pyjama_day"
 
 
 layeredimage yuri_resting:
-    if persistent.bg == "space" and renpy.has_image ("yuri_resting_" + persistent.costume + "_space"):
+    if persistent.bg == "space" and renpy.has_image("yuri_resting_" + persistent.costume + "_space"):
         "yuri_resting_[persistent.costume]_space"
-    elif persistent.bg != "space" and renpy.has_image("yuri_resting_" + persistent.costume + current_timecycle_marker):
+    elif persistent.bg == "space" and renpy.has_image("yuri_resting_pyjama_space"):
+        "yuri_resting_pyjama_space"
+    elif persistent.bg != "space" and renpy.has_image("yuri_resting_" + persistent.costume + "_day") and renpy.has_image("yuri_resting_" + persistent.costume + current_timecycle_marker):
         "yuri_resting_[persistent.costume][current_timecycle_marker]"
-    else:
+    elif persistent.bg != "space" and not renpy.has_image("yuri_resting_" + persistent.costume + "_day") and renpy.has_image("yuri_resting_pyjama" + current_timecycle_marker):
+        "yuri_resting_pyjama[current_timecycle_marker]"
+    elif renpy.has_image("yuri_resting_" + persistent.costume + "_day"):
         "yuri_resting_[persistent.costume]_day"
+    else:
+        "yuri_resting_pyjama_day"
 
 
 image birthdaybanner = "banner[current_timecycle_marker]"
