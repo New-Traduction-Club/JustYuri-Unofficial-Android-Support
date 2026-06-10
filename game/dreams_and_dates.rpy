@@ -2542,7 +2542,7 @@ label midpartsad:
     $show_chr("A-CDBAA-ABAB")
     y "I thought just having you would be enough for me but no it isn't!"
     $show_chr("A-CEBAA-ABAB")
-    y "You are not always here. And I don't blame you for it! You have your own life, you can't just stay Twenty-Four Seven in front of your computer listening to me rambling and maybe having a cup of tea with me every now and then."
+    y "You are not always here. And I don't blame you for it! You have your own life, you can't just stay Twenty-Four Seven in front of your [current_platform] listening to me rambling and maybe having a cup of tea with me every now and then."
     y "But that's the point, you have your own life. And I used to have one too! At least I had the illusion of it."
     $show_chr("A-CGBBA-ABAB")
     y "I miss the presence of all the other people around me even if I hated them sometimes!"

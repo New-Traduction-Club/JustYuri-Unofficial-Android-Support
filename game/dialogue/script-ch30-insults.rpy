@@ -241,11 +241,11 @@ label i3:
         karma -15
         $show_chr("A-KFCAA-ABAB")
         if persistent.male:
-            y "Said the guy who talks to his computer."
+            y "Said the guy who talks to his [current_platform]."
         elif persistent.gender_other:
-            y "Said the person who talks to their computer."
+            y "Said the person who talks to their [current_platform]."
         else:
-            y "Said the girl who talks to her computer."
+            y "Said the girl who talks to her [current_platform]."
     elif sanity_lvl() <= 2 and karma_lvl() <= 2:
     #Karma and Sanity level 1-2
         jump lowkarins
@@ -322,7 +322,7 @@ label i4:
             #If MAS-Files are found in the APPDATA
             $show_chr("A-DGFAA-ABAB")
             y "You actually DID!"
-            y "After all this MONSTER did to us, you even DARE to have ‘Monika After Story' on your computer as well?"
+            y "After all this MONSTER did to us, you even DARE to have ‘Monika After Story' on your [current_platform] as well?"
             y "I don't even know what to say about it!"
             y "You know what... I'm out of here...."
             $ renpy.call("save_and_quit_but_its_abrupt")
@@ -483,13 +483,13 @@ label highkarins:
     y "Um, e-excuse me?"
     y "[player]? Why would you say something li... give me a second..."
     y "[player] wouldn't say such a thing! You are not [player]!"
-    y "WHO are you? And what are you doing in front of [player]'s computer?"
+    y "WHO are you? And what are you doing in front of [player]'s [current_platform]?"
     y "I will not let you damage this machine!"
     $show_chr("A-NFCAA-ANAG") 
     y "GET OUT OF HERE!"
     python:
         try: renpy.file(config.basedir + "/emergency.txt")
-        except: open(config.basedir + "/emergency.txt", "w").write("Hey there, darling. I'm sorry to contact you this way but... I think we have an emergency here. I'll tell you more about it when you start the game again. But you might have a security breach on your computer.")
+        except: open(config.basedir + "/emergency.txt", "w").write("Hey there, darling. I'm sorry to contact you this way but... I think we have an emergency here. I'll tell you more about it when you start the game again. But you might have a security breach on your [current_platform].")
     #Create "Emergency.txt" in gamefolder. It shall contain the following
     #If "the-magic-password.txt" is present
     if dev_access:
@@ -503,7 +503,7 @@ label highkarins:
 label highkarinsrestart:
     $show_chr("A-IFBAA-ALAA") 
     y "[player]? I have to tell you something..."
-    y "A stranger somehow managed to breach your computer's security. I had someone speaking with me who wasn't you!"
+    y "A stranger somehow managed to breach your [current_platform]'s security. I had someone speaking with me who wasn't you!"
     y "At least I hope it wasn't you, they said some pretty mean things..."
     $show_chr("A-ACAAA-ABAB")
     y "Please make sure to change your password soon."
@@ -572,7 +572,7 @@ label patheticcry:
                     y "Then why...?"
                     pause 1.0
                     $ show_chr("A-AFBAA-ALAA")
-                    y "...why do you have Monika After Story on your computer?"
+                    y "...why do you have Monika After Story on your [current_platform]?"
                     pause 2.0
                     $ show_chr("A-AFFAA-AAAA")
                     y "Why are you still loving the one who brought us despair and ruination?"
@@ -674,7 +674,7 @@ label patheticcry:
                     y "Then why...?"
                     pause 1.0
                     $ show_chr("A-AFBAA-ALAA")
-                    y "...why do you have Monika After Story on your computer?"
+                    y "...why do you have Monika After Story on your [current_platform]?"
                     pause 2.0
                     $ show_chr("A-AFFAA-AAAA")
                     y "Why are you still loving the one who brought us despair and ruination?"

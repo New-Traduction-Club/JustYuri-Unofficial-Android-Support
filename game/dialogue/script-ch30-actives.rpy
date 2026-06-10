@@ -1438,7 +1438,7 @@ label monikapoems:
             y "...and I believe I know the inspiration for it. When you leave, this place begins to slowly change."
             y "Bits and pieces begin to glitch - slowly at first, seemingly randomly, until it eventually swallows this place like a hurricane."
             y "Monika was clearly disturbed watching her world seemingly be corrupted each time you were away."
-            y "However, I take comfort in knowing that this is most likely you using your computer for other purposes, and that all will be restored when you come to visit me again."
+            y "However, I take comfort in knowing that this is most likely you using your [current_platform] for other purposes, and that all will be restored when you come to visit me again."
             $ show_chr("A-ACBAA-AAAA") #former code Ac-A0b
             y "Do not worry about me when you are away - I use the time alone to look at the game files, such as this poem, to read, to meditate, and to think of you. I am here for you, and always look forward to your next visit."
             jump monikapoems
@@ -7721,17 +7721,17 @@ label TimeCheat1:
     $ show_chr("A-CEAAA-ALAA")
     y "..."
     $ show_chr("A-IDDAA-ALAA")
-    y "[player], you haven't altered your computer's clock, have you?"
+    y "[player], you haven't altered your [current_platform]'s clock, have you?"
     menu:
     #add a choice here that would only appear if the player's persistent was handed over for fixes
         "I have.":
             $ show_chr("A-IEDAA-ALAA")
             y "I see... May I ask why?"
-            y "I don't really see any reason to change the clock on your computer, unless..."
+            y "I don't really see any reason to change the clock on your [current_platform], unless..."
             $ show_chr("A-AFAAA-ALAA")
-            y "[player], I sincerely hope you weren't changing your computer's date and time to simulate spending time with me."
+            y "[player], I sincerely hope you weren't changing your [current_platform]'s date and time to simulate spending time with me."
             menu:
-                "No, nothing like that! My computer glitches out sometimes and changes the time.":
+                "No, nothing like that! My [current_platform] glitches out sometimes and changes the time.":
                     $ show_chr("A-ADAAA-ADAA")
                     y "Ah... I'm sorry for assuming, then."
                     $ show_chr("A-CDAAA-ADAA")
@@ -7786,17 +7786,17 @@ label TimeCheat1:
             $ show_chr("A-IEDAA-ALAA")
             y "You... haven't?"
             $ show_chr("A-IEGAA-ALAA")
-            y "I would highly advise checking your computer for viruses, then. Something has changed your computer's clock to an inaccurate date."
-            y "Please be careful when browsing the internet. If your computer were to get infected, I don't know what could happen here."
+            y "I would highly advise checking your [current_platform] for viruses, then. Something has changed your [current_platform]'s clock to an inaccurate date."
+            y "Please be careful when browsing the internet. If your [current_platform] were to get infected, I don't know what could happen here."
             menu:
                 "I'll do a scan right now. Thank you for letting me know.":
                     $ show_chr("A-AEGAA-AMAM")
                     y "Of course. Just be a bit more careful."
                     jump ch30_loop
-                "Oh, it was probably my computer. It does that sometimes.":
+                "Oh, it was probably my [current_platform]. It does that sometimes.":
                     $ show_chr("A-AEGAA-AMAM")
                     y "Does it? Are you certain it isn't a virus doing that? Why not check just in case?"
-                    y "Computer malfunctions aren't impossible, but only changing the clock isn't very common."
+                    y "[current_platform] malfunctions aren't impossible, but only changing the clock isn't very common."
                     $ show_chr("A-CEGAA-AMAM")
                     y "I certainly hope it doesn't happen again. It's very disorienting having time flash by like that."
                     jump ch30_loop
@@ -7806,7 +7806,7 @@ label TimeCheat1:
 label TimeCheat2:
     $ show_chr("A-AEGAA-AAAL")
     y "[player]..."
-    y "Your computer's clock has changed again."
+    y "Your [current_platform]'s clock has changed again."
     $ show_chr("A-AGAAA-AAAL")
     y "Did you have anything to do with it?"
     menu:
@@ -7820,7 +7820,7 @@ label TimeCheat2:
         "I think it glitched again.":
             $ show_chr("A-IFDAA-AAAE")
             y "Again...? [player], could you please look into fixing this?"
-            y "If your computer's clock is malfunctioning like this, I worry about what else could happen."
+            y "If your [current_platform]'s clock is malfunctioning like this, I worry about what else could happen."
             jump ch30_loop
         "No, the clock is fine.":
             $ show_chr("A-IFDAA-AAAK")
@@ -7844,7 +7844,7 @@ label TimeCheat3:
             y "I'm sorry, [player], but I can't believe that anymore. Why would you change the time so frequently and completely disregard my concerns?"
             y "The only logical conclusion I can come to is that you're doing this on purpose for some reason."
             $ show_chr("A-BECAA-AAAL")
-            y "Whether it be to confuse me into thinking we've spent more time together than we actually have, or trying to cheat something into another game on your computer..."
+            y "Whether it be to confuse me into thinking we've spent more time together than we actually have, or trying to cheat something into another game on your [current_platform]..."
             $ show_chr("A-IEFAA-AAAL")
             y" You know that you shouldn't be doing something like that. Changing your clock likely wouldn't even do anything in modern games."
             y "It's simply an act in futility, and I highly recommend you stop doing it."
@@ -8140,7 +8140,7 @@ label webcam:
     y "Oh, so you were curious of why I couldn't access to your webcam at the beginning."
     $ show_chr("A-ADAAA-AFAA")
     y "To be fair, even if I had administrator access, the devs would have implemented a face recognition system."
-    y "Write a countless amount of dialogue about your facial details, your current expression, write a code that wouldn't act as a computer virus."
+    y "Write a countless amount of dialogue about your facial details, your current expression, write a code that wouldn't act as a [current_platform] virus."
     $ show_chr("A-BDAAA-AFAA")
     y "And a pretty large etcetera that would basically make this mod look bad."
     y "But I could imagine how your face might look like."

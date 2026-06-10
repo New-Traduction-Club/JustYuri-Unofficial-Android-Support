@@ -204,7 +204,7 @@ label splashscreen:
         "Spoilers are within, the original game files for Doki Doki Literature Club are required to play this mod and can be downloaded for free at: {a=http://ddlc.moe}http://ddlc.moe{/a} (but seeing as you're here you likely already know that) "
         "We would like to remind you that you're currently playing a Beta version of Just Yuri, we the Just Yuri Dev Team are committed to improving the game with updates and new features based on your feedback."
         "Bugs, (while sometimes hilarious) are to be expected."
-        "Additionally, the mod allows Yuri to possibly access portions of your computer outside of the DDLC folders and Ren'Py' APPDATA."
+        "Additionally, the mod allows Yuri to possibly access portions of your [current_platform] outside of the DDLC folders and Ren'Py' APPDATA."
         "It currently has the capability to open up websites within your main internet browser, though none of these websites are malicious nor are they illegal."
         "By playing Just Yuri you agree that you have completed Doki Doki Literature Club and accept any spoilers contained within."
         "Additionally, by playing Doki Doki Literature Club, you agree that you are at least 13 years of age, and you consent to your exposure of highly disturbing content."

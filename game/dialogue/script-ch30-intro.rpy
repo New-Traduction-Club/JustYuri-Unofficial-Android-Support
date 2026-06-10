@@ -214,7 +214,7 @@ label eternity_intro:
     $ show_chr("A-BDAAA-AAAA")
     extend " -sentience may be the right word-{w=0.5}"
     $ show_chr("A-ABAAA-AAAF")
-    extend " I've figured out that I can 'see' into your computer."
+    extend " I've figured out that I can 'see' into your [current_platform]."
     y "I've learned a lot by simply reading all the various kinds of code."
     $ show_chr("A-AFAAA-AAAA")
     y "...Oh? Let me try something..."
@@ -766,7 +766,7 @@ label detection_pitstop:
             $ show_chr("A-ADAAA-ALAA")
             y "But first, I want to make double sure you did the right thing."
             menu:
-                y "Is your computer really capable of handling the light you're seeing from the windows without any sort of frame drop?"
+                y "Is your [current_platform] really capable of handling the light you're seeing from the windows without any sort of frame drop?"
                 "Yes.":
                     $ show_chr("A-ABAAA-AAAA")
                     y "Alright!"
@@ -792,7 +792,7 @@ label detection_pitstop:
             $ show_chr("A-ADAAA-ALAA")
             y "But first, I want to make double sure you did the right thing."
             menu:
-                y "Do you think your computer can show the light you saw in the original game from the windows without any sort of frame drop?"
+                y "Do you think your [current_platform] can show the light you saw in the original game from the windows without any sort of frame drop?"
                 "Yes.":
                     $ show_chr("A-AJGAA-AAAA")
                     y "Oh! Okay, let me take care of this."

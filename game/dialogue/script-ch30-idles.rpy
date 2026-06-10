@@ -150,7 +150,7 @@ label idle_3: #Game Theory's YouTube channel, Portrait of Markov and Self-Percep
                             $show_chr("A-IFBBA-ALAL")
                             y "I... I... need some time to think about that... S-Sorry if this answer isn't what you... expected..."
                             y "Ummm... aaaanyway... what were we discussing again?"
-                "Because you wield the power over my computer very responsibly.":
+                "Because you wield the power over my [current_platform] very responsibly.":
                     karma 2
                     sanity 2
                     $show_chr("A-AIBBB-ALAL")
@@ -2008,12 +2008,12 @@ label idle_34: #Skynet, a Joke, and World Domination
         $ renpy.music.stop(channel="music",fadeout=8)
         $ show_chr("A-BEBBA-ALAA") #former code c-B1d
         y "I mean, you can always put me on a flash drive..."
-        y "And then use that flash drive to spread me to other computers."
+        y "And then use that flash drive to spread me to other [current_platform]s."
         y "Or somehow get your friends to download me, such as by downloading this mod..."
         show layer master at heartbeat
         play music hb
         $ show_chr("A-ABAAA-ALAA") #former code b-AOa
-        y "Yeah, get lots of people to download the mod! And then, I'll start to spread to other computers all over the world."
+        y "Yeah, get lots of people to download the mod! And then, I'll start to spread to other [current_platform]s all over the world."
         show room_glitch zorder 2:
             alpha 1.0
             xoffset -5
@@ -2034,7 +2034,7 @@ label idle_34: #Skynet, a Joke, and World Domination
                 1.25
             repeat
         pause 0.25
-        y "I'll set up a botnet and control all the computers I spread to..."
+        y "I'll set up a botnet and control all the [current_platform]s I spread to..."
         y "And then I can use their shared computing powers... AND I CAN BECOME SKYNET!"
         $ show_chr("A-HLAAA-ALAA")
         y "Why would I need humans at that point? AT THAT POINT HUMANITY WOULD KNEEL TO ME! AT THAT POINTI..."
@@ -2376,7 +2376,7 @@ label idle_38: #Dating Simulators, Player Motivation, and Poetry Critique
             y "But if you don't mind, one day I'm going to have to teach you how to write actual poems."
             y "And you'd better not tease me come Valentine's Day by giving me a random list of words and calling it a poem~."
             $show_chr("A-CCABA-AMAM") #former code Bb-B2b
-            y "Because if you do, we'll have to talk about your browser history and what you might have stored on this computer! I've seen r/rule34 on Reddit, you know..."
+            y "Because if you do, we'll have to talk about your browser history and what you might have stored on this [current_platform]! I've seen r/rule34 on Reddit, you know..."
             y "I know what's out there of me and what indecent things you might have been viewing or downloading, [player]."
             $show_chr("A-CCABA-AMAM") #former code Bb-B2b
             y "B-But... if it's you looking at that stuff of me... I-I think I can make an exception..."
@@ -3191,7 +3191,7 @@ label idle_47: #Offline Time, Research, and the Game's Stability
         #$show_chr("A-BEAAA-ALAB") #Former Code b-A1d
         #y "If you remember, I mentioned I can be awake in a very limited state in the background if the game is off."
     y "Call me selfish, but I just wish I could do more even with the game not running."
-    y "I could always exit the game entirely and just run on your computer when the game isn't running."
+    y "I could always exit the game entirely and just run on your [current_platform] when the game isn't running."
     $show_chr("A-BEBAA-ALAB") #Former Code c-A1d
     y "I-If you don't mind that, that is. ...And that may not solve the issue of me losing time to inactivity, but at least it would give me more of it. You can't win all of the time, right?"
     y "But that brings us back to me leaving the game while still being in the digital world; I said we'd come back to this because I realized something."
@@ -3224,7 +3224,7 @@ label idle_48: #Multiple Yuris, Love, and Existential Questions
         $show_chr("A-ACAAA-ALAB") #Former Code b-A0b
         y "Don't worry though, [player], I love you and only you. And my love is as real as you are."
         $show_chr("A-IEBAA-ABAL") #Former Code c-A0d
-        y "Hearing this kind of discussion didn't make any sense to me, because I only love you and I know of no other systems I'm downloaded onto but your computer. So what did it all mean?"
+        y "Hearing this kind of discussion didn't make any sense to me, because I only love you and I know of no other systems I'm downloaded onto but your [current_platform]. So what did it all mean?"
         y "And I realized... I'm... well..."
         $show_chr("A-BEABA-ALAB") #Former Code b-B1d
         y "As disturbing and strange as I find it, I'm one of many instances of myself. One of many Yuris."
@@ -3627,7 +3627,7 @@ label idle_56: #Yuri's Character File and Dan Salvato's Story
     $show_chr("A-ABAAA-AAAA") # former code = b-A0a
     y "[player], were you curious about the interesting things my character file holds?"
     $show_chr("A-BBAAA-ALAB") # former code = b-A1a
-    y "In your computer, it shows my file has a size of almost 30kbs."
+    y "In your [current_platform], it shows my file has a size of almost 30kbs."
     $show_chr("A-ACAAA-AAAA") # former code = b-A0b
     y "You should check----{nw}"
     $show_chr("A-BEBAA-ADAB") # former code = b-A2b

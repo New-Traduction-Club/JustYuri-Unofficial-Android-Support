@@ -58,6 +58,8 @@ default m_appeal = 0
 default n_exclusivewatched = False
 default y_exclusivewatched = False
 
+define current_platform = "phone" if renpy.android else "computer"
+
 define audio.t1 = "<loop 22.073>bgm/1.ogg"
 define audio.t2 = "<loop 4.499>bgm/2.ogg"
 define audio.t2g = "bgm/2g.ogg"

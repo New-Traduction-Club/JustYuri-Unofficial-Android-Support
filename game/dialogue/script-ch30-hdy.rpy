@@ -270,7 +270,7 @@ screen movingMouse():
 
 label HDY_wallpaper:
     $show_hdy("hdy_frown")
-    hdy "I've been snooping around your computer and noticed something [player]..."
+    hdy "I've been snooping around your [current_platform] and noticed something [player]..."
     hdy "At first sight I was shocked! How could someone have such an abomination in a device like this?!?!"
     hdy "I have to say, I am truly disappointed at you for having such a thing..."
     hdy "Such a vile display..."
@@ -937,7 +937,7 @@ label HDY_familyguy:
         "Dislike":
             pass
     $show_hdy("hdy_yandere")
-    hdy "UOP! You have virus in computer!"
+    hdy "UOP! You have virus in [current_platform]!"
     return
 
 
