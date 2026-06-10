@@ -1396,24 +1396,57 @@ init -501 screen name_input(message, ok_action):
     add "gui/overlay/confirm.png"
     key "K_RETURN" action [Play("sound", gui.activate_sound), ok_action]
 
-    frame:
+    if not renpy.android:
+        frame:
 
-        has vbox:
+            has vbox:
+                xalign .5
+                yalign .5
+                spacing 30
+
+            label _(message):
+                style "confirm_prompt"
+                xalign 0.5
+
+            input default "" value VariableInputValue("player") length 20 allow "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz'.-_ 1234567890"
+
+            hbox:
+                xalign 0.5
+                spacing 100
+
+                textbutton _("OK") action ok_action
+    
+    else:
+        frame:
             xalign .5
-            yalign .5
-            spacing 30
+            yalign .1
 
-        label _(message):
-            style "confirm_prompt"
-            xalign 0.5
+            vbox:
+                xalign .5
+                yalign .3
+                spacing 30
 
-        input default "" value VariableInputValue("player") length 20 allow "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz'.-_ 1234567890"
+                hbox:
+                    spacing 20
+                    xalign 0.5
 
-        hbox:
-            xalign 0.5
-            spacing 100
+                    vbox:
+                        spacing 20
+                        label _(message):
+                            style "confirm_prompt"
+                            xalign 0.0
 
-            textbutton _("OK") action ok_action
+                        vbox:
+                            xalign 0.35
+                            input default "" value VariableInputValue("player") length 20 allow "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz'.-_ 1234567890"
+
+                        
+                    vbox:
+                        spacing 20
+                        textbutton _("OK") action ok_action align (0.5, 0.5)
+                    vbox:
+                        spacing 20
+                        textbutton _("Cancel") action Hide("name_input") align (0.6, 0.5)
 
 init -501 screen dialog(message, ok_action):
 
